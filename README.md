@@ -1,2 +1,2 @@
 # largedata
-LFS Repo for large data VisIt data files
+LFS repo for large VisIt data files
