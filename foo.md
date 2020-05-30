@@ -1,9 +1,9 @@
 ---
 ---
 
-###
+### Data Archive List
 
-{% for darch in site.darchives %}
+{% for darch in site.datarchives %}
 <p>title: {{ darch.title }}</p>
 <p>stem: {{ darch.stem }}</p>
 <p>Sizes:</p>

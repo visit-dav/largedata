@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
 collections:
   datarchives:
-      output: true
+    output: true
