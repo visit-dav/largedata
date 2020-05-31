@@ -1,8 +1,8 @@
 ---
 ---
 
-Title | `.7z` | `.tar.gz` | `.zip`
-:--- | :---: | :---: | :---:
+| Title | `.7z` | `.tar.gz` | `.zip` |
+| :--- | :---: | :---: | :---: |
 {% for darch in site.datarchives %}
     {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
     {% assign nkzip = darch.nbytes.zip | divided_by: 1000 %}
@@ -25,7 +25,7 @@ Title | `.7z` | `.tar.gz` | `.zip`
     {% else %}
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
-{{ darch.title }} | [{{n7z}}]({{darch.stem}}.7z) | [{{ntgz}}]({{darch.stem}}.tar.gz) | [{{nzip}}]({{darch.stem}}.zip)
+| {{ darch.title }} | [{{n7z}}]({{darch.stem}}.7z) | [{{ntgz}}]({{darch.stem}}.tar.gz) | [{{nzip}}]({{darch.stem}}.zip) |
 {% endfor %}
 
 <p>title: {{ darch.title }}</p>
