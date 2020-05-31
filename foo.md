@@ -37,7 +37,7 @@
     {% capture tabline %}
 | {{- darch.title -}} | [{{-n7z-}}]({{-darch.stem-}}.7z) | [{{-ntgz-}}]({{-darch.stem-}}.tar.gz) | [{{-nzip-}}]({{-darch.stem-}}.zip) |
     {% endcapture %}
-{{-tabline | replace: newline, " " | replace: "<p>", " " | replace: "</p>", " " | strip_newlines-}}
+{{-tabline | replace: "<p>", newline | replace: "</p>", newline-}}
 {%- endfor -%}
 
 <p>title: {{ darch.title }}</p>
