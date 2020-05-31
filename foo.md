@@ -25,7 +25,7 @@
     {% else %}
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
-| {{ darch.title }} | [{{n7z}}]({{darch.stem}}.7z) | [{{ntgz}}]({{darch.stem}}.tar.gz) | [{{nzip}}]({{darch.stem}}.zip) |
+| {{ darch.title | strip_newlines }} | [{{n7z | strip_newlines}}]({{darch.stem | strip_newlines}}.7z) | [{{ntgz | strip_newlines}}]({{darch.stem | strip_newlines}}.tar.gz) | [{{nzip | strip_newlines}}]({{darch.stem | strip_newlines}}.zip) |
 {% endfor %}
 
 <p>title: {{ darch.title }}</p>
