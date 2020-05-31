@@ -42,7 +42,6 @@ Title | `.7z` | `.tar.gz` | `.zip`
 <li>tgz: {{ darch.sha256.tgz}}</li>
 <li>zip: {{ darch.sha256.zip}}</li>
 </ul>
-{% endfor %}
 
 ### Static files list
 <ul>
