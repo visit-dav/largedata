@@ -9,7 +9,7 @@
 
 | Title | `.7z` | `.tar.gz` | `.zip` |
 |:---|:---:|:---:|:---:|
-{%- for darch in site.datarchives -%}
+{% for darch in site.datarchives -%}
     {%- assign nktgz = darch.nbytes.tgz | divided_by: 1000 -%}
     {%- assign nkzip = darch.nbytes.zip | divided_by: 1000 -%}
     {%- assign nk7z = darch.nbytes.7z | divided_by: 1000 -%}
