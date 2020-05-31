@@ -9,6 +9,11 @@
 |a|b|c|d|
 
 
+{% capture tabletxt %}
+| Title | `.7z` | `.tar.gz` | `.zip` |EOL|:---|:---:|:---:|:---:|EOL|A|B|C|D|EOL
+{% endcapture %}
+{{tabletxt | replace: "EOL", newline}}
+
 
 | Title | `.7z` | `.tar.gz` | `.zip` |
 |:---|:---:|:---:|:---:|
