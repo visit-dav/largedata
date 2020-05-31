@@ -1,6 +1,9 @@
 ---
 ---
 
+{% capture newline %}
+{% endcapture %}
+
 | Title | `.7z` | `.tar.gz` | `.zip` |
 |:---|:---:|:---:|:---:|
 |a|b|c|d|
@@ -31,7 +34,10 @@
     {%- else -%}
         {% assign n7z = nM7z | append: "MB" -%}
     {%- endif -%}
+    {% capture tabline %}
 | {{- darch.title -}} | [{{-n7z-}}]({{-darch.stem-}}.7z) | [{{-ntgz-}}]({{-darch.stem-}}.tar.gz) | [{{-nzip-}}]({{-darch.stem-}}.zip) |
+    {% endcapture %}
+{{-tabline | replace: newline, " " | replace: "<p>", " " | replace: "</p>", " " | strip_newlines-}}
 {%- endfor -%}
 
 <p>title: {{ darch.title }}</p>
