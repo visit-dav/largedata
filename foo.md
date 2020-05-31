@@ -1,70 +1,53 @@
 ---
 ---
 
+<!--
+We're using Liquid here somewhat unusually to have it output MARKDOWN instead
+of the usual HTML. But, the challenge is that Markdown is highly sensitive to
+newlines and Liquid is somewhat unpredictable in the creation of newlines.
+So, first, we need to create a Liquid variable that represents
+a NEWLINE. That is that the first capture block is all about. Then, we capture
+the entire Markdown table as a single Liquid string variable, tabletxt, with
+'EOL' representing the end of each line of the table. Finally, we output the
+Markdown table, striping all newlines that Liquid may have inserted, replacing
+any HTML <p> and </p> that Liquid may have inserted with spaces and then finally
+replacing the EOLs with real newlines.
+-->
 {% capture newline %}
 {% endcapture %}
 
-| Title | `.7z` | `.tar.gz` | `.zip` |
-|:---|:---:|:---:|:---:|
-|a|b|c|d|
-
-
 {% capture tabletxt %}
-| Title | `.7z` | `.tar.gz` | `.zip` |EOL|:---|:---:|:---:|:---:|EOL|A|B|C|D|EOL
-{%- for darch in site.datarchives -%}
-    {%- assign nktgz = darch.nbytes.tgz | divided_by: 1000 -%}
-    {%- assign nkzip = darch.nbytes.zip | divided_by: 1000 -%}
-    {%- assign nk7z = darch.nbytes.7z | divided_by: 1000 -%}
-    {%- assign nMtgz = darch.nbytes.tgz | divided_by: 1000000 -%}
-    {%- assign nMzip = darch.nbytes.zip | divided_by: 1000000 -%}
-    {%- assign nM7z = darch.nbytes.7z | divided_by: 1000000 -%}
-    {%- if nktgz < 1000 -%}
-        {% assign ntgz = nktgz | append: "KB" -%}
-    {%- else -%}
-        {% assign ntgz = nMtgz | append: "MB" -%}
-    {%- endif -%}
-    {%- if nkzip < 1000 -%}
-        {% assign nzip = nkzip | append: "KB" -%}
-    {%- else -%}
-        {% assign nzip = nMzip | append: "MB" -%}
-    {%- endif -%}
-    {%- if nk7z < 1000 -%}
-        {% assign n7z = nk7z | append: "KB" -%}
-    {%- else -%}
-        {% assign n7z = nM7z | append: "MB" -%}
-    {%- endif -%}
-| {{- darch.title -}} | [{{-n7z-}}]({{-darch.stem-}}.7z) | [{{-ntgz-}}]({{-darch.stem-}}.tar.gz) | [{{-nzip-}}]({{-darch.stem-}}.zip) | EOL
-{%- endfor -%}
+| Title | `.7z` | `.tar.gz` | `.zip` |EOL|:---|:---:|:---:|:---:|EOL
+{% for darch in site.datarchives %}
+    {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
+    {% assign nkzip = darch.nbytes.zip | divided_by: 1000 %}
+    {% assign nk7z = darch.nbytes.7z | divided_by: 1000 %}
+    {% assign nMtgz = darch.nbytes.tgz | divided_by: 1000000 %}
+    {% assign nMzip = darch.nbytes.zip | divided_by: 1000000 %}
+    {% assign nM7z = darch.nbytes.7z | divided_by: 1000000 %}
+    {% if nktgz < 1000 %}
+        {% assign ntgz = nktgz | append: "KB" %}
+    {% else %}
+        {% assign ntgz = nMtgz | append: "MB" %}
+    {% endif %}
+    {% if nkzip < 1000 %}
+        {% assign nzip = nkzip | append: "KB" %}
+    {% else %}
+        {% assign nzip = nMzip | append: "MB" %}
+    {% endif %}
+    {% if nk7z < 1000 %}
+        {% assign n7z = nk7z | append: "KB" %}
+    {% else %}
+        {% assign n7z = nM7z | append: "MB" %}
+    {% endif %}
+| {{ darch.title }} | [{{n7z}}]({{site.baseurl}}/blob/master/{{darch.stem}}.7z?raw=tre) | [{{ntgz}}]({{darch.stem}}.tar.gz) | [{{nzip}}]({{darch.stem}}.zip) | EOL
+{% endfor %}
 {% endcapture %}
-{{tabletxt | replace: "<p>, " " | replace "</p>, " " | replace: "EOL", newline}}
+{{tabletxt | replace: "<p>, " " | replace "</p>, " " | strip_newlines | replace: "EOL", newline}}
 
 
-| Title | `.7z` | `.tar.gz` | `.zip` |
-|:---|:---:|:---:|:---:|
-{% for darch in site.datarchives -%}
-    {%- assign nktgz = darch.nbytes.tgz | divided_by: 1000 -%}
-    {%- assign nkzip = darch.nbytes.zip | divided_by: 1000 -%}
-    {%- assign nk7z = darch.nbytes.7z | divided_by: 1000 -%}
-    {%- assign nMtgz = darch.nbytes.tgz | divided_by: 1000000 -%}
-    {%- assign nMzip = darch.nbytes.zip | divided_by: 1000000 -%}
-    {%- assign nM7z = darch.nbytes.7z | divided_by: 1000000 -%}
-    {%- if nktgz < 1000 -%}
-        {% assign ntgz = nktgz | append: "KB" -%}
-    {%- else -%}
-        {% assign ntgz = nMtgz | append: "MB" -%}
-    {%- endif -%}
-    {%- if nkzip < 1000 -%}
-        {% assign nzip = nkzip | append: "KB" -%}
-    {%- else -%}
-        {% assign nzip = nMzip | append: "MB" -%}
-    {%- endif -%}
-    {%- if nk7z < 1000 -%}
-        {% assign n7z = nk7z | append: "KB" -%}
-    {%- else -%}
-        {% assign n7z = nM7z | append: "MB" -%}
-    {%- endif -%}
-| {{- darch.title -}} | [{{-n7z-}}]({{-darch.stem-}}.7z) | [{{-ntgz-}}]({{-darch.stem-}}.tar.gz) | [{{-nzip-}}]({{-darch.stem-}}.zip) |
-{%- endfor -%}
+https://github.com/visit-dav/largedata/blob/master/aneurysm_tutorial_data.tar.gz?raw=true
+
 
 <p>title: {{ darch.title }}</p>
 <p>stem: {{ darch.stem }}</p>
