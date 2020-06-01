@@ -17,7 +17,7 @@ replacing the EOLs with real newlines.
 {% endcapture %}
 
 {% capture tabletxt %}
-| Title | `.7z` | `.tar.gz` | `.zip` |EOL|:---|:---:|:---:|:---:|EOL
+| Title | `.7z` | `.tar.gz` | `.zip` |EOL|:---|---:|---:|---:|EOL
 {% for darch in site.datarchives %}
     {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
     {% assign nkzip = darch.nbytes.zip | divided_by: 1000 %}
@@ -40,7 +40,7 @@ replacing the EOLs with real newlines.
     {% else %}
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
-| {{ darch.title }} | [{{n7z}}]({{site.baseurl}}/blob/master/{{darch.stem}}.7z?raw=true) | [{{ntgz}}]({{darch.stem}}.tar.gz) | [{{nzip}}]({{darch.stem}}.zip) | EOL
+| {{ darch.title }} | [{{n7z}}]({{site.rawdata_baseurl}}/{{darch.stem}}.7z?raw=true) | [{{ntgz}}]({{site.rawdata_baseurl}}/{{darch.stem}}.tar.gz?raw=true) | [{{nzip}}]({{site.rawdata_baseurl}}/{{darch.stem}}.zip?raw=true) | EOL
 {% endfor %}
 {% endcapture %}
 {{tabletxt | replace: "<p>, " " | replace "</p>, " " | strip_newlines | replace: "EOL", newline}}
@@ -77,7 +77,7 @@ replacing the EOLs with real newlines.
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
     <tr>
-        <td style="text-align: left">{{ darch.title }}</td>
+        <td style="text-align: left">datarchives/{{ darch.title }}.md</td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true">{{ ntgz }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true">{{ nzip }}</a></td>
