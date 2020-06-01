@@ -6,24 +6,18 @@ layout: default
 
 {{ page.content }}
 
-{% assign len = page.relative_path | size %}
-{% assign len2 = len | minus: 3 %}
-{% assign new_relative_path = page.relative_path | truncate: len2, "" | remove_first: "_" %}
-
-<p>New Relative Path = {{ new_relative_path }}</p>
-
 <table>
   <tr>
     <th colspan="2">File Names</th>
   </tr>
   <tr>
-    <td colspan="2"><code>{{ page.stem }}.7z</code></td>
+    <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}.7z?raw=true">{{ page.stem }}.7z</a></code></td>
   </tr>
   <tr>
-    <td colspan="2"><code>{{ page.stem }}.tar.gz</code></td>
+    <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}.tar.gz?raw=true">{{ page.stem }}.tar.gz</a></code></td>
   </tr>
   <tr>
-    <td colspan="2"><code>{{ page.stem }}.zip</code></td>
+    <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}.zip?raw=true">{{ page.stem }}.zip</a></code></td>
   </tr>
   <tr>
     <th>Extension</th>
