@@ -1,12 +1,16 @@
 ## Welcome to the VisIt Large Data Repo
 
 This is where the VisIt project hosts large datasets used in examples, tutorials
-and other purposes. These datasets are managed using GitHub's Large File Support (LFS).
+and for other purposes. These datasets are managed using
+[GitHub's Large File Support (LFS)](https://git-lfs.github.com).
 
 To facilitate HTTPs access to datasets hosted here, this respository is also generated
-as a website and hosted at https://visit-dav.github.io/largedata/.
+as a website and hosted at [https://visit-dav.github.io/largedata/].
 
-For help composing any content in markdown, see [this example page](markdown-help.md).
+For help see these...
+
+* [Instructions for adding new data here](adding-data-help.md)
+* [Instructions for composing content in markdown](markdown-help.md) 
 
 <table>
   <tr>
