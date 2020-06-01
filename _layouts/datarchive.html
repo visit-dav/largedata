@@ -6,6 +6,12 @@ layout: default
 
 {{ page.content }}
 
+{% assign len = page.relative_path | size %}
+{% assign len2 = len | minus: 3 %}
+{% assign new_relative_path = page.relative_path | truncate: len2, "" | remove_first: "_" %}
+
+<p>New Relative Path = {{ new_relative_path }}</p>
+
 <table>
   <tr>
     <th colspan="2">File Names</th>
@@ -68,25 +74,3 @@ layout: default
     <td><code>{{ page.md5.zip }}</code></td>
   </tr>
 </table>
-
-
-<p>title: {{ page.title }}</p>
-<p>stem: {{ page.stem }}</p>
-<p>Sizes:</p>
-<ul>
-<li>7z: {{ page.nbytes.7z}}</li>
-<li>tgz: {{ page.nbytes.tgz}}</li>
-<li>zip: {{ page.nbytes.zip}}</li>
-</ul>
-<p>sha256:</p>
-<ul>
-<li>7z: {{ page.sha256.7z}}</li>
-<li>tgz: {{ page.sha256.tgz}}</li>
-<li>zip: {{ page.sha256.zip}}</li>
-</ul>
-<p>md5:</p>
-<ul>
-<li>7z: {{ page.md5.7z}}</li>
-<li>tgz: {{ page.md5.tgz}}</li>
-<li>zip: {{ page.md5.zip}}</li>
-</ul>

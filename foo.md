@@ -88,10 +88,6 @@ replacing the EOLs with real newlines.
 {% endfor %}
 </table>
 
-https://github.com/visit-dav/largedata/blob/master/aneurysm_tutorial_data.tar.gz?raw=true
-https://visit-dav.github.io/largedata/blob/master/aneurysm_tutorial_data.7z?raw=true
-
-
 {% for darch in site.datarchives %}
 <p>content: {{ darch.content }}</p>
 <p>path: {{ darch.path }}</p>
