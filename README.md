@@ -6,7 +6,7 @@ and for other purposes. These datasets are managed using
 
 To facilitate HTTPs access to datasets hosted here, this respository is also generated
 as a website and hosted at
-(https://visit-dav.github.io/largedata/](https://visit-dav.github.io/largedata/).
+[https://visit-dav.github.io/largedata/](https://visit-dav.github.io/largedata/).
 
 For help adding to this repo see these resources...
 
