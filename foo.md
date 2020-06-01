@@ -76,8 +76,11 @@ replacing the EOLs with real newlines.
     {% else %}
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
+    {% assign len = darch.relative_path | size %}
+    {% assign len2 = len | minus: 3 %}
+    {% assign new_relative_path = darch.relative_path | truncate: len2, "" %}
     <tr>
-        <td style="text-align: left"><a href="./datarchives/{{ darch.stem }}.md">{{ darch.title }}</a></td>
+        <td style="text-align: left"><a href="{{ new_relative_path }}">{{ darch.title }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true">{{ ntgz }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true">{{ nzip }}</a></td>
