@@ -23,7 +23,9 @@ formats are...
      tar cvf - foo_data | gzip --best > foo_data.tar.gz
      zip -9 foo_data.zip foo_data 
   ```
-1. Add your data files to the `bindata` directory.
+1. Add your data files to the `bindata` directory. Because we don't expect content here
+to be simultaneously revised by multiple developers or to be changing on a frequent basis,
+it is perfectly sufficient to do all the work here directly on the `master` branch.
    ```
    git add foo.7z
    git add foo.tar.gz
