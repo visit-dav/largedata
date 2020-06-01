@@ -2,7 +2,29 @@
 layout: default
 ---
 
+<h3>{{ page.title }}</h3>
+
 {{ page.content }}
+
+<table>
+  <tr>
+    <th>File name</th>
+    <th>Size</th>
+  </tr>
+  <tr>
+    <td><code>{{ page.stem }}.7z</code></td>
+    <td><code>{{ page.nbytes.7z }}</code></td>
+  </tr>
+  <tr>
+    <td><code>{{ page.stem }}.tar.gz</code></td>
+    <td><code>{{ page.nbytes.tgz }}</code></td>
+  </tr>
+  <tr>
+    <td><code>{{ page.stem }}.zip</code></td>
+    <td><code>{{ page.nbytes.zip }}</code></td>
+  </tr>
+</table>
+
 
 <p>title: {{ page.title }}</p>
 <p>stem: {{ page.stem }}</p>
