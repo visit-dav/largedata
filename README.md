@@ -8,7 +8,6 @@ as a website and hosted at https://visit-dav.github.io/largedata/.
 
 For help composing any content in markdown, see [this example page](markdown-help.md).
 
-<!-- Here is the normal HTML way -->
 <table>
   <tr>
     <th style="text-align: left">Title</th>
