@@ -77,7 +77,7 @@ replacing the EOLs with real newlines.
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
     <tr>
-        <td style="text-align: left">datarchives/{{ darch.title }}.md</td>
+        <td style="text-align: left"><a href="./datarchives/{{ darch.stem }}.md">{{ darch.title }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true">{{ ntgz }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true">{{ nzip }}</a></td>
