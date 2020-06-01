@@ -1,4 +1,5 @@
 ---
+layout: datarchive
 title: VisIt Tutorial
 stem: visit_tutorial_data
 nbytes:

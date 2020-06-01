@@ -1,4 +1,5 @@
 ---
+layout: datarchive
 title: Potential Flow
 stem: potential_flow_tutorial_data
 nbytes:
