@@ -65,6 +65,6 @@ your push.
 This repo is using the GitHub *builtin* [minimal](https://pages-themes.github.io/minimal/)
 theme. Because it is a GitHub *builtin* theme, its structure is *hugely* simplified
 relative to an ordinary, custom *Jekyll* theme based site. Nonetheless, this site still
-uses some portions of a standard, custome *Jekyll* site including the use of Liquid
-language in some files, the use of the `datarchive` collection and the use of a
-*layout* specifically for pages of the `datarchive` collection.
+uses some portions of a standard, custom *Jekyll* site including the use of Liquid
+language in some files, the use of Jekyll *collections* for the `datarchive` collection
+and the use of a *layout* specifically for pages of the `datarchive` collection.
