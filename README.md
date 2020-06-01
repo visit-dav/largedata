@@ -7,8 +7,9 @@ and for other purposes. These datasets are managed using
 To facilitate HTTPs access to datasets hosted here, this respository is also generated
 as a website and hosted at [https://visit-dav.github.io/largedata/].
 
-For help see these...
+For help adding to this repo see these...
 
+* [Guidance for 7-zip](7zip-help.md)
 * [Instructions for adding new data here](adding-data-help.md)
 * [Instructions for composing content in markdown](markdown-help.md) 
 
