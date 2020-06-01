@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
-rawdata_baseurl: https://github.com/visit-dav/largedata/bindata/blob/master
+rawdata_baseurl: https://github.com/visit-dav/largedata/blob/master/bindata
 collections:
   datarchives:
     output: true
