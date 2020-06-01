@@ -89,6 +89,13 @@ https://github.com/visit-dav/largedata/blob/master/aneurysm_tutorial_data.tar.gz
 https://visit-dav.github.io/largedata/blob/master/aneurysm_tutorial_data.7z?raw=true
 
 
+{% for darch in site.datarchives %}
+<p>content: {{ darch.content }}</p>
+<p>path: {{ darch.path }}</p>
+<p>relative_path: {{ darch.relative_path }}</p>
+<p>url: {{ url.path }}</p>
+<p>collection: {{ url.collection }}</p>
+
 <p>title: {{ darch.title }}</p>
 <p>stem: {{ darch.stem }}</p>
 <p>Sizes:</p>
@@ -103,6 +110,7 @@ https://visit-dav.github.io/largedata/blob/master/aneurysm_tutorial_data.7z?raw=
 <li>tgz: {{ darch.sha256.tgz}}</li>
 <li>zip: {{ darch.sha256.zip}}</li>
 </ul>
+{% endfor %}
 
 ### Static files list
 <ul>
