@@ -77,8 +77,8 @@ replacing the EOLs with real newlines.
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
     {% assign len = darch.relative_path | size %}
-    {% assign len2 = len | minus: 2 %}
-    {% assign new_relative_path = darch.relative_path | remove_first: "_" | truncate: len2, "" %}
+    {% assign len2 = len | minus: 3 %}
+    {% assign new_relative_path = darch.relative_path | truncate: len2, "" | remove_first: "_" %}
     <tr>
         <td style="text-align: left"><a href="{{ new_relative_path }}">{{ darch.title }}</a></td>
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</a></td>
