@@ -5,9 +5,10 @@ and for other purposes. These datasets are managed using
 [GitHub's Large File Support (LFS)](https://git-lfs.github.com).
 
 To facilitate HTTPs access to datasets hosted here, this respository is also generated
-as a website and hosted at [https://visit-dav.github.io/largedata/].
+as a website and hosted at
+(https://visit-dav.github.io/largedata/](https://visit-dav.github.io/largedata/).
 
-For help adding to this repo see these...
+For help adding to this repo see these resources...
 
 * [Guidance for 7-zip](7zip-help.md)
 * [Instructions for adding new data here](adding-data-help.md)
