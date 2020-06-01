@@ -1,4 +1,4 @@
-### How to add data files to this repo
+## How to add data files to this repo
 
 Assume all your data files are stored in a directory named `foo_data`.
 
@@ -59,3 +59,12 @@ You can use this link anywhere including in email to tell users how to get this
 data. Users do not requie a GitHub account in order to access data through this link.
 1. Wait for the site to rebuild. This usually takes less than a few minutes after
 your push.
+
+### A few notes about this repo's Jekyll design
+
+This repo is using the GitHub *builtin* [minimal](https://pages-themes.github.io/minimal/)
+theme. Because it is a GitHub *builtin* theme, its structure is *hugely* simplified
+relative to an ordinary, custom *Jekyll* theme based site. Nonetheless, this site still
+uses some portions of a standard, custome *Jekyll* site including the use of Liquid
+language in some files, the use of the `datarchive` collection and the use of a
+*layout* specifically for pages of the `datarchive` collection.
