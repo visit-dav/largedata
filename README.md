@@ -1,5 +1,3 @@
----
----
 ## Welcome to the VisIt Large Data Repo
 
 This is where the VisIt project hosts large datasets used in examples, tutorials
