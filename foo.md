@@ -40,13 +40,53 @@ replacing the EOLs with real newlines.
     {% else %}
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
-| {{ darch.title }} | [{{n7z}}]({{site.baseurl}}/blob/master/{{darch.stem}}.7z?raw=tre) | [{{ntgz}}]({{darch.stem}}.tar.gz) | [{{nzip}}]({{darch.stem}}.zip) | EOL
+| {{ darch.title }} | [{{n7z}}]({{site.baseurl}}/blob/master/{{darch.stem}}.7z?raw=true) | [{{ntgz}}]({{darch.stem}}.tar.gz) | [{{nzip}}]({{darch.stem}}.zip) | EOL
 {% endfor %}
 {% endcapture %}
 {{tabletxt | replace: "<p>, " " | replace "</p>, " " | strip_newlines | replace: "EOL", newline}}
 
 
+<!-- Here is the normal HTML way -->
+<table>
+  <tr>
+    <th>Title</th>
+    <th><code>.7z</code></th>
+    <th><code>.tar.gz</code></th>
+    <th><code>.zip</code></th>
+  </tr>
+{% for darch in site.datarchives %}
+    {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
+    {% assign nkzip = darch.nbytes.zip | divided_by: 1000 %}
+    {% assign nk7z = darch.nbytes.7z | divided_by: 1000 %}
+    {% assign nMtgz = darch.nbytes.tgz | divided_by: 1000000 %}
+    {% assign nMzip = darch.nbytes.zip | divided_by: 1000000 %}
+    {% assign nM7z = darch.nbytes.7z | divided_by: 1000000 %}
+    {% if nktgz < 1000 %}
+        {% assign ntgz = nktgz | append: "KB" %}
+    {% else %}
+        {% assign ntgz = nMtgz | append: "MB" %}
+    {% endif %}
+    {% if nkzip < 1000 %}
+        {% assign nzip = nkzip | append: "KB" %}
+    {% else %}
+        {% assign nzip = nMzip | append: "MB" %}
+    {% endif %}
+    {% if nk7z < 1000 %}
+        {% assign n7z = nk7z | append: "KB" %}
+    {% else %}
+        {% assign n7z = nM7z | append: "MB" %}
+    {% endif %}
+    <tr>
+        <td>{{ darch.title }}</td>
+        <td><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</td>
+        <td><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true">{{ ntgz }}</td>
+        <td><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true">{{ nzip }}</td>
+    </tr>
+{% endfor %}
+</table>
+
 https://github.com/visit-dav/largedata/blob/master/aneurysm_tutorial_data.tar.gz?raw=true
+https://visit-dav.github.io/largedata/blob/master/aneurysm_tutorial_data.7z?raw=true
 
 
 <p>title: {{ darch.title }}</p>

@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
+rawdata_baseurl: https://github.com/visit-dav/largedata/blob/master
 collections:
   datarchives:
     output: true
