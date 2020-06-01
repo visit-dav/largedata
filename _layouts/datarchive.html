@@ -8,51 +8,63 @@ layout: default
 
 <table>
   <tr>
-    <th>File name</th>
-    <th>Size</th>
+    <th colspan="2">File Names</th>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.7z</code></td>
+    <td colspan="2"><code>{{ page.stem }}.7z</code></td>
+  </tr>
+  <tr>
+    <td colspan="2"><code>{{ page.stem }}.tar.gz</code></td>
+  </tr>
+  <tr>
+    <td colspan="2"><code>{{ page.stem }}.zip</code></td>
+  </tr>
+  <tr>
+    <th>Extension</th>
+    <th>File Sizes</th>
+  </tr>
+  <tr>
+    <td><code>.7z</code></td>
     <td><code>{{ page.nbytes.7z }}</code></td>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.tar.gz</code></td>
+    <td><code>.tar.gz</code></td>
     <td><code>{{ page.nbytes.tgz }}</code></td>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.zip</code></td>
+    <td><code>.zip</code></td>
     <td><code>{{ page.nbytes.zip }}</code></td>
   </tr>
   <tr>
-    <th>File name</th>
+    <th>Extension</th>
     <th>SHA 256</th>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.7z</code></td>
+    <td><code>.7z</code></td>
     <td><code>{{ page.sha256.7z }}</code></td>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.tar.gz</code></td>
+    <td><code>.tar.gz</code></td>
     <td><code>{{ page.sha256.tgz }}</code></td>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.zip</code></td>
+    <td><code>.zip</code></td>
     <td><code>{{ page.sha256.zip }}</code></td>
   </tr>
   <tr>
-    <th>File name</th>
+    <th>Extension</th>
     <th>MD5</th>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.7z</code></td>
+    <td><code>.7z</code></td>
     <td><code>{{ page.md5.7z }}</code></td>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.tar.gz</code></td>
+    <td><code>.tar.gz</code></td>
     <td><code>{{ page.md5.tgz }}</code></td>
   </tr>
   <tr>
-    <td><code>{{ page.stem }}.zip</code></td>
+    <td><code>.zip</code></td>
     <td><code>{{ page.md5.zip }}</code></td>
   </tr>
 </table>
