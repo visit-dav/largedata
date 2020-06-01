@@ -1,4 +1,5 @@
 ---
+layout: datarchive
 title: Aneurysm
 stem: aneurysm_tutorial_data
 nbytes:
