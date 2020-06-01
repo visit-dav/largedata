@@ -49,10 +49,10 @@ replacing the EOLs with real newlines.
 <!-- Here is the normal HTML way -->
 <table>
   <tr>
-    <th>Title</th>
-    <th><code>.7z</code></th>
-    <th><code>.tar.gz</code></th>
-    <th><code>.zip</code></th>
+    <th style="text-align: left">Title</th>
+    <th style="text-align: right"><code>.7z</code></th>
+    <th style="text-align: right"><code>.tar.gz</code></th>
+    <th style="text-align: right"><code>.zip</code></th>
   </tr>
 {% for darch in site.datarchives %}
     {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
@@ -77,10 +77,10 @@ replacing the EOLs with real newlines.
         {% assign n7z = nM7z | append: "MB" %}
     {% endif %}
     <tr>
-        <td>{{ darch.title }}</td>
-        <td><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</a></td>
-        <td><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true">{{ ntgz }}</a></td>
-        <td><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true">{{ nzip }}</a></td>
+        <td style="text-align: left">{{ darch.title }}</td>
+        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</a></td>
+        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true">{{ ntgz }}</a></td>
+        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true">{{ nzip }}</a></td>
     </tr>
 {% endfor %}
 </table>
