@@ -54,9 +54,21 @@ In the table below...
     {% assign new_relative_path = darch.relative_path | truncate: len2, "" | remove_first: "_" %}
     <tr>
         <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ darch.title }}</a></td>
+    {% if darch.nbytes.7z %}
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true" title="Click to download .7z file now">{{ n7z }}</a></td>
+    {% else %}
+        <td style="text-align: right">N/A</td>
+    {% endif %}
+    {% if darch.nbytes.tgz %}
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true" title="Click to download .tar.gz file now">{{ ntgz }}</a></td>
+    {% else %}
+        <td style="text-align: right">N/A</td>
+    {% endif %}
+    {% if darch.nbytes.zip %}
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true" title="Click to ownload .zip file now">{{ nzip }}</a></td>
+    {% else %}
+        <td style="text-align: right">N/A</td>
+    {% endif %}
     </tr>
 {% endfor %}
 </table>
