@@ -1,20 +1,26 @@
 ## Welcome to the VisIt Large Data Repo
 
-This is where the VisIt project hosts large datasets used in examples, tutorials
+This website and the
+[GitHub repo that backs it up](https://visit-dav.github.io/largedata/)
+is where the VisIt project hosts large datasets used in examples, tutorials
 and for other purposes. These datasets are managed using
-[GitHub's Large File Support (LFS)](https://git-lfs.github.com).
+[GitHub's Large File Support (LFS)](https://git-lfs.github.com) but are also
+available to download individually via HTTPs from this website.
 
-To facilitate HTTPs access to datasets hosted here, this respository is also generated
-as a website and hosted at
-[https://visit-dav.github.io/largedata/](https://visit-dav.github.io/largedata/).
+For help contributing to this repo see these resources...
 
-For help adding to this repo see these resources...
+* [Adding data files](adding-data-help.md)
+* [Markdown primer](markdown-help.md) 
 
-* [Guidance for 7-zip](7zip-help.md)
-* [Instructions for adding new data here](adding-data-help.md)
-* [Instructions for composing content in markdown](markdown-help.md) 
+
+In the table below...
+
+* Clicking a size link will download the file in the indicated format.
+* Clicking the title link will give more information about the download.
+* To use `.7z`, see [our guidance for 7-zip](7zip-help.md).
 
 <table>
+  <caption>Data downloads available here</caption>
   <tr>
     <th style="text-align: left">Title</th>
     <th style="text-align: right"><code>.7z</code></th>
@@ -47,10 +53,10 @@ For help adding to this repo see these resources...
     {% assign len2 = len | minus: 3 %}
     {% assign new_relative_path = darch.relative_path | truncate: len2, "" | remove_first: "_" %}
     <tr>
-        <td style="text-align: left"><a href="{{ new_relative_path }}">{{ darch.title }}</a></td>
-        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true">{{ n7z }}</a></td>
-        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true">{{ ntgz }}</a></td>
-        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true">{{ nzip }}</a></td>
+        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ darch.title }}</a></td>
+        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true" title="Click to download .7z file now">{{ n7z }}</a></td>
+        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true" title="Click to download .tar.gz file now">{{ ntgz }}</a></td>
+        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true" title="Click to ownload .zip file now">{{ nzip }}</a></td>
     </tr>
 {% endfor %}
 </table>
