@@ -44,10 +44,11 @@ one of the data files here. To enable users to be able to selectively download
 specific files, we provide HTTPs access to those files through this website using
 GitHub *magic* URL to access their *raw* contents.
 1. Create a new markdown file in the `_datarchive` *collection* directory. In the
-front-matter for that file, you optionally define the file sizes, sha256 and md5
+front-matter for that file, you may optionally define the file sizes, sha256 and md5
 checksums for various of the formats you host. If you don't host a specific format,
 then don't include lines for `nbytes` member of that format in the front-matter.
 Also, feel free to include a detailed description of the data in the *body* of the file.
+It is a good idea to provide a VisIt rendered image of the dataset too.
   ```
   git add _datarchive/foo.md
   git commit -a -m 'adding foo to collection'
