@@ -1,6 +1,6 @@
 ## Welcome to the VisIt Large Data Repo
 
-This website and the
+This [website](https://visit-dav.github.io/largedata/) and the
 [GitHub repo that backs it up](https://visit-dav.github.io/largedata/)
 is where the VisIt project hosts large datasets used in examples, tutorials
 and for other purposes. These datasets are managed using
