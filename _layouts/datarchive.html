@@ -6,7 +6,9 @@ layout: default
 
 {% if page.has_image %}
   {% assign page_file_path_arr = {{ page.path }} | split: '/' %}
+{{ page_file_path_arr.last }}
   {% assign len = page_file_path_arr.last | size | minus: 3 %}
+{{ len }}
   {% assign img_file_name = page_file_path_arr.last | truncate: len, "" %}
   <img src="{{ img_file_name }}" style="float:left;width:300px;">
 {% endif %}
