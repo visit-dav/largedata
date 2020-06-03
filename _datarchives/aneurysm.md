@@ -2,6 +2,7 @@
 layout: datarchive
 title: Aneurysm
 stem: aneurysm_tutorial_data
+has_image: true
 nbytes:
   7z: 115843082
   tgz: 379007322
