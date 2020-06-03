@@ -29,12 +29,14 @@ formats are...
 to be simultaneously revised by multiple developers or to be changing on a frequent basis,
 it is perfectly sufficient to do all the work here directly on the `master` branch.
    ```
-   git add foo.7z
-   git add foo.tar.gz
-   git add foo.zip
+   git add bindata/foo_data.7z
+   git add bindata/foo_data.tar.gz
+   git add bindata/foo_data.zip
    git commit -a -m 'adding foo data'
    git push
    ```
+   **Note:** it is a best practice to name the resulting file without the extension with
+the same name as the directory it *expands* into.
 1. Pushing your added files to GitHub can take a long time depending on file sizes.
 Once the operation is completed, the files you see in the repo on GitHub will be
 [LFS *pointer* files ](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage#pointer-file-format).
@@ -44,7 +46,8 @@ problem with this operation is that it cannot be used to selectively download on
 one of the data files here. To enable users to be able to selectively download
 specific files, we provide HTTPs access to those files through this website using
 GitHub *magic* URL to access their *raw* contents.
-1. Create a markdown file, `foo.md`, in the `_datarchives` *collection* directory. In the
+1. Create the dataset's landing page by creating a markdown file, `foo.md`, in the
+`_datarchives` *collection* directory. In the
 front-matter for this file, you may optionally define the file sizes, sha256 and md5
 checksums for various of the formats you host. If you don't host a specific format,
 then don't include lines for `nbytes` member of that format in the front-matter.
@@ -58,22 +61,41 @@ this, be sure to set the variable `has_image: true` in `foo.md` frontmatter.
    git add _datarchives/foo.md
    git add _datarchives/foo.png
    git add _datarchives/foo_thumbnail.png
-   git commit -a -m 'adding foo to collection'
+   git commit -a -m 'adding foo page datarchives collection'
    git push
    ```
-1. Take note that the download path to your data file (not the LFS *pointer* file)
-will be `https://github.com/visit-dav/largedata/blob/master/bindata/foo_data.7z?raw=true`
-You can use this link anywhere including in email to tell users how to get this
-data. Users do not require a GitHub account in order to access data through this link.
 1. Wait for the site to rebuild. This usually takes less than a few minutes after
 your push.
+
+### About the download links
+
+The download path to the `.tar.gz` *raw* data file (not the LFS *pointer* file),
+for example, will look like...
+
+```
+https://github.com/visit-dav/largedata/blob/master/bindata/foo_data.tar.gz?raw=true
+```
+
+You can use this link anywhere including in email to give users the link to get that
+specific data file. Users do not require a GitHub account in order to access data
+through this link.
+
+Better still, give them a link to the `datarchives` page for the dataset, which will
+look something like...
+
+```
+https://visit-dav.github.io/largedata/datarchives/foo
+```
+
+which takes users to a page with more information about the dataset including all the
+download format options (e.g. `.7z`, `.tar.gz`, `.zip`, etc.) and integrity checks.
 
 ### A few notes about this repo's Jekyll design
 
 This repo is using GitHub's *builtin* [minimal](https://pages-themes.github.io/minimal/)
-theme. Because it is a GitHub *builtin* theme, its structure is *hugely* simplified
-relative to an ordinary, custom [*Jekyll*](https://jekyllrb.com) theme based site.
+gh-pages theme. Because it is a GitHub *builtin* theme, its structure is *hugely* simplified
+compared to an ordinary, custom [*Jekyll*](https://jekyllrb.com) theme based site.
 Nonetheless, this site still uses some portions of a standard, custom *Jekyll* site
-including the use of Liquid language in some files, the use of Jekyll *collections* for
-the `datarchive` collection and the use of a *layout* specifically for pages of the
-`datarchive` collection.
+including the use of Liquid templating language in some files, the use of Jekyll
+*collections* for the `datarchive` collection and the use of a *layout* specifically for
+pages of the `datarchive` collection.
