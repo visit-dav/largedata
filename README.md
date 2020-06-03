@@ -56,9 +56,9 @@ In the table below...
     <tr>
         <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ darch.title }}</a></td>
     {% if darch.has_image %}
-        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="datarchive/aneurysm_thumb.png" style="height=64;"></a></td>
+        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="datarchives/aneurysm_thumb.png" style="height=64;"></a></td>
     {% else %}
-        <td style="text-align: right">None</td>
+        <td style="text-align: left">None</td>
     {% endif %}
     {% if darch.nbytes.7z %}
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true" title="Click to download .7z file now">{{ n7z }}</a></td>
