@@ -23,7 +23,7 @@ In the table below...
   <caption>Data downloads available here</caption>
   <tr>
     <th style="text-align: left">Title</th>
-    <th style="text-align: left">Image</th>
+    <th style="text-align: left">Thumbnail</th>
     <th style="text-align: right"><code>.7z</code></th>
     <th style="text-align: right"><code>.tar.gz</code></th>
     <th style="text-align: right"><code>.zip</code></th>
@@ -56,7 +56,7 @@ In the table below...
     <tr>
         <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ darch.title }}</a></td>
     {% if darch.has_image %}
-        <td style="text-align: left:><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="datarchive/aneurysm_thumb.png" style="height=64'"></a></td>
+        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="datarchive/aneurysm_thumb.png" style="height=64;"></a></td>
     {% else %}
         <td style="text-align: right">None</td>
     {% endif %}
