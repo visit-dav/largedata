@@ -5,9 +5,10 @@ layout: default
 <h3>{{ page.title }}</h3>
 
 {% if page.has_image %}
-
-<img src="aneurysm.png" alt="{{ page.path }}" style="float:left;width:300px;">
-
+  {% assign page_file_path_arr = {{ page.path }} | split: '/' %}
+  {% assign len = page_file_path_arr.last | size | minus: 3 %}
+  {% assign img_file_name = page_file_path_arr.last | truncate: len, "" %}
+  <img src="{{ img_file_name }}" style="float:left;width:300px;">
 {% endif %}
 
 {{ page.content }}
