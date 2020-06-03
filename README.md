@@ -23,6 +23,7 @@ In the table below...
   <caption>Data downloads available here</caption>
   <tr>
     <th style="text-align: left">Title</th>
+    <th style="text-align: left">Image</th>
     <th style="text-align: right"><code>.7z</code></th>
     <th style="text-align: right"><code>.tar.gz</code></th>
     <th style="text-align: right"><code>.zip</code></th>
@@ -54,6 +55,11 @@ In the table below...
     {% assign new_relative_path = darch.relative_path | truncate: len2, "" | remove_first: "_" %}
     <tr>
         <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ darch.title }}</a></td>
+    {% if darch.has_image %}
+        <td style="text-align: left:><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="datarchive/aneurysm_thumb.png" style="height=64'"></a></td>
+    {% else %}
+        <td style="text-align: right">None</td>
+    {% endif %}
     {% if darch.nbytes.7z %}
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true" title="Click to download .7z file now">{{ n7z }}</a></td>
     {% else %}
