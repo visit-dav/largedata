@@ -1,21 +1,23 @@
-## How to add data files to this repo
+## How to add data files
 
 The instructions below are written assuming all data files to be added are stored
 in a directory named `foo_data`.
 
 1. It is not a *requirement* but please try to create all download format options,
-`.7z`, `.tar.gz` and `.zip` whenever possible. The advantages of the various
-formats are...
+`.7z`, `.tar.gz` and `.zip` whenever possible. If you provide only one option, `.tar.gz`
+is probably the best because all platforms have ubiquitous tools to process that
+format. The advantages of the various formats are...
    * `.7z` ([7-zip.org](https://www.7-zip.org/download.html))
-     * Usually the smallest files by 2-3x so faster to download.
-     * Decompression tools are available for [Windows](https://www.7-zip.org/download.html),
+     * Usually the smallest files by 2-3x.
+     * Tools are available for [Windows](https://www.7-zip.org/download.html),
        [Mac](https://apps.apple.com/us/app/the-unarchiver/id425424353) and
        [Linux](https://www.7-zip.org/download.html).
-     * However decompression tools are not often *pre-built* on most systems and instead
-       need to be downloaded and installed.
+     * Tools are not often *pre-built* on most systems so users wind up
+       having to download and install them prior to use.
    * `.tar.gz` (aka `.tgz`, [tarball](https://en.wikipedia.org/wiki/Tar_(computing)))
-     * Most commonly used on Linux/Unix systems
-     * Windows and Mac tools often handle `.tar.gz` files
+     * Most commonly used on Linux/Unix systems.
+     * Windows and Mac tools often handle `.tar.gz` files.
+     * Best format if you only provide one download option.
    * `.zip` ([zip](https://en.wikipedia.org/wiki/Zip_(file_format)))
      * Most commonly used on Windows systems.
      * Linux/Unix and Mac tools often handle `.zip` files.
@@ -27,36 +29,40 @@ formats are...
    ```
 1. Add your data files to the `bindata` directory. Because we don't expect content here
 to be simultaneously revised by multiple developers or to be changing on a frequent basis,
-it is perfectly sufficient to do all the work here directly on the `master` branch.
+it is perfectly fine to do all the work here directly on the `master` branch.
    ```
+   git pull
    git add bindata/foo_data.7z
    git add bindata/foo_data.tar.gz
    git add bindata/foo_data.zip
    git commit -a -m 'adding foo data'
    git push
    ```
-   **Note:** it is a best practice to name the resulting file without the extension with
-the same name as the directory it *expands* into.
-1. Pushing your added files to GitHub can take a long time depending on file sizes.
-Once the operation is completed, the files you see in the repo on GitHub will be
+   **Note:** It is a best practice to name the resulting file (not including the
+extension) with the same name as the directory it *expands* into.
+1. Pushing your added data files to GitHub can take a long time depending on file sizes.
+Once the operation completes, the files you see in the repo on GitHub will be
 [LFS *pointer* files ](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage#pointer-file-format).
-Anyone cloning the repo will get only these *pointer* files. To get to the actual data
-files these LFS *pointer* files reference, a `git-lfs pull` operation is used. A
-problem with this operation is that it cannot be used to selectively download only
-one of the data files here. To enable users to be able to selectively download
-specific files, we provide HTTPs access to those files through this website using
-GitHub *magic* URL to access their *raw* contents.
+Anyone cloning the repo will get only these *pointer* files and not the actual
+data files. To get to the actual data files the LFS *pointer* files reference, a
+`git-lfs pull` operation is used. A problem with this operation is that downloads
+*every* LFS file in the repo. It cannot be used to selectively download only
+one of the data files here. To enable users to selectively download specific files,
+we provide HTTPs access to those files through this website using
+GitHub *magic* URL to access their *raw* contents. See the notes below regarding
+the [download links](#about-the-download-links)
 1. Create the dataset's landing page by creating a markdown file, `foo.md`, in the
 `_datarchives` *collection* directory. In the
 front-matter for this file, you may optionally define the file sizes, sha256 and md5
-checksums for various of the formats you host. If you don't host a specific format,
+checksums for the formats you host. If you don't host a specific format,
 then don't include lines for `nbytes` member of that format in the front-matter.
 Also, feel free to include a detailed description of the data in the *body* of the file.
 1. You may optionally add an image for the data. Be sure to create one about 300-600
 pixels in *width* and another, thumbnail, about 64 pixels in *height*. Be sure to
 name the files `foo.png` and `foo_thumbnail.png` and put these files in the
 `_datarchives` collection directory allong with the `foo.md` markdown file. If you do
-this, be sure to set the variable `has_image: true` in `foo.md` frontmatter.
+this, be sure to set the variable `has_image: true` in `foo.md`
+[frontmatter](https://jekyllrb.com/docs/front-matter/).
    ```
    git add _datarchives/foo.md
    git add _datarchives/foo.png

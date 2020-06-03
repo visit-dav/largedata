@@ -1,13 +1,13 @@
-## Welcome to the VisIt Large Data Repo
+## Welcome to VisIt Large Data
 
 This [website](https://visit-dav.github.io/largedata/) and the
-[GitHub repo that backs it up](https://visit-dav.github.io/largedata/)
+[GitHub repo](https://visit-dav.github.io/largedata/) that backs it up
 is where the VisIt project hosts large datasets used in examples, tutorials
 and for other purposes. These datasets are managed using
 [GitHub's Large File Support (LFS)](https://git-lfs.github.com) but are also
 available to download individually via HTTPs from this website.
 
-For help contributing to this repo see these resources...
+For help contributing, see these resources...
 
 * [Adding data files](help/adding-data-help.md)
 * [Markdown primer](help/markdown-help.md) 
