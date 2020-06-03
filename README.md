@@ -15,9 +15,9 @@ For help contributing to this repo see these resources...
 
 In the table below...
 
-* Clicking a size link will download the file in the indicated format.
-* Clicking the title link will give more information about the download.
-* To use `.7z`, see [our guidance for 7-zip](help/7zip-help.md).
+* Clicking a size link downloads the data in the indicated format.
+* Clicking a title or image link gives more info about the download.
+* `.7z` is often 2-3x smaller but see [our guidance](help/7zip-help.md) for help with it.
 
 <table>
   <caption>Data downloads available here</caption>
