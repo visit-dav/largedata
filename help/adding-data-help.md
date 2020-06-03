@@ -1,7 +1,7 @@
 ## How to add data files to this repo
 
-The instructions below are written assuming assume all data files to be added are
-stored in a directory named `foo_data`.
+The instructions below are written assuming all data files to be added are stored
+in a directory named `foo_data`.
 
 1. It is not a *requirement* but please try to create all download format options,
 `.7z`, `.tar.gz` and `.zip` whenever possible. The advantages of the various
