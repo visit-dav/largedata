@@ -19,6 +19,7 @@ formats are...
    * `.zip` ([zip](https://en.wikipedia.org/wiki/Zip_(file_format)))
      * Most commonly used on Windows systems.
      * Linux/Unix and Mac tools often handle `.zip` files.
+
    ```
    7z a -y -m0=lzma2 -mx=9 foo_data.7z foo_data
    tar cvf - foo_data | gzip --best > foo_data.tar.gz
