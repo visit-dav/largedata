@@ -9,15 +9,15 @@ available to download individually via HTTPs from this website.
 
 For help contributing to this repo see these resources...
 
-* [Adding data files](adding-data-help.md)
-* [Markdown primer](markdown-help.md) 
+* [Adding data files](help/adding-data-help.md)
+* [Markdown primer](help/markdown-help.md) 
 
 
 In the table below...
 
 * Clicking a size link will download the file in the indicated format.
 * Clicking the title link will give more information about the download.
-* To use `.7z`, see [our guidance for 7-zip](7zip-help.md).
+* To use `.7z`, see [our guidance for 7-zip](help/7zip-help.md).
 
 <table>
   <caption>Data downloads available here</caption>

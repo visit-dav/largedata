@@ -4,11 +4,17 @@ layout: default
 
 <h3>{{ page.title }}</h3>
 
+{% if page.has_image %}
+
+<img src="aneurysm.png" alt="{{ page.title }}" style="float:right;width:400px;">
+
+{% endif %}
+
 {{ page.content }}
 
 <table>
   <tr>
-    <th colspan="2">File Names</th>
+    <th colspan="2">Download file options</th>
   </tr>
   {% if page.nbytes.7z %}
   <tr>
@@ -26,8 +32,8 @@ layout: default
   </tr>
   {% endif %}
   <tr>
-    <th>Extension</th>
-    <th>File Sizes</th>
+    <th>File Extension</th>
+    <th>Size</th>
   </tr>
   {% if page.nbytes.7z %}
   <tr>
@@ -48,7 +54,7 @@ layout: default
   </tr>
   {% endif %}
   <tr>
-    <th>Extension</th>
+    <th>File Extension</th>
     <th>SHA 256</th>
   </tr>
   {% if page.nbytes.7z %}
@@ -70,7 +76,7 @@ layout: default
   </tr>
   {% endif %}
   <tr>
-    <th>Extension</th>
+    <th>File Extension</th>
     <th>MD5</th>
   </tr>
   {% if page.nbytes.7z %}
