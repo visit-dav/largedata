@@ -56,7 +56,7 @@ In the table below...
     <tr>
         <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ darch.title }}</a></td>
     {% if darch.has_image %}
-        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="datarchives/aneurysm_thumb.png" style="height=64;"></a></td>
+        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="{{ new_relative_path }}_thumb.png" style="height=48;"></a></td>
     {% else %}
         <td style="text-align: left">None</td>
     {% endif %}
