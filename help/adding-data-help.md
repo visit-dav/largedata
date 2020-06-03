@@ -27,13 +27,13 @@ formats are...
 1. Add your data files to the `bindata` directory. Because we don't expect content here
 to be simultaneously revised by multiple developers or to be changing on a frequent basis,
 it is perfectly sufficient to do all the work here directly on the `master` branch.
-  ```
-  git add foo.7z
-  git add foo.tar.gz
-  git add foo.zip
-  git commit -a -m 'adding foo data'
-  git push
-  ```
+   ```
+   git add foo.7z
+   git add foo.tar.gz
+   git add foo.zip
+   git commit -a -m 'adding foo data'
+   git push
+   ```
 1. Pushing your added files to GitHub can take a long time depending on file sizes.
 Once the operation is completed, the files you see in the repo on GitHub will be
 [LFS *pointer* files ](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage#pointer-file-format).
@@ -53,13 +53,13 @@ pixels in *width* and another, thumbnail, about 64 pixels in *height*. Be sure t
 name the files `foo.png` and `foo_thumbnail.png` and put these files in the
 `_datarchives` collection directory allong with the `foo.md` markdown file. If you do
 this, be sure to set the variable `has_image: true` in `foo.md` frontmatter.
-  ```
-  git add _datarchives/foo.md
-  git add _datarchives/foo.png
-  git add _datarchives/foo_thumbnail.png
-  git commit -a -m 'adding foo to collection'
-  git push
-  ```
+   ```
+   git add _datarchives/foo.md
+   git add _datarchives/foo.png
+   git add _datarchives/foo_thumbnail.png
+   git commit -a -m 'adding foo to collection'
+   git push
+   ```
 1. Take note that the download path to your data file (not the LFS *pointer* file)
 will be `https://github.com/visit-dav/largedata/blob/master/bindata/foo_data.7z?raw=true`
 You can use this link anywhere including in email to tell users how to get this
