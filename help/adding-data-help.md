@@ -43,14 +43,20 @@ problem with this operation is that it cannot be used to selectively download on
 one of the data files here. To enable users to be able to selectively download
 specific files, we provide HTTPs access to those files through this website using
 GitHub *magic* URL to access their *raw* contents.
-1. Create a new markdown file in the `_datarchive` *collection* directory. In the
-front-matter for that file, you may optionally define the file sizes, sha256 and md5
+1. Create a markdown file, `foo.md`, in the `_datarchives` *collection* directory. In the
+front-matter for this file, you may optionally define the file sizes, sha256 and md5
 checksums for various of the formats you host. If you don't host a specific format,
 then don't include lines for `nbytes` member of that format in the front-matter.
 Also, feel free to include a detailed description of the data in the *body* of the file.
-It is a good idea to provide a VisIt rendered image of the dataset too.
+1. You may optionally add an image for the data. Be sure to create one about 300-600
+pixels in *width* and another, thumbnail, about 64 pixels in *height*. Be sure to
+name the files `foo.png` and `foo_thumbnail.png` and put these files in the
+`_datarchives` collection directory allong with the `foo.md` markdown file. If you do
+this, be sure to set the variable `has_image: true` in `foo.md` frontmatter.
   ```
-  git add _datarchive/foo.md
+  git add _datarchives/foo.md
+  git add _datarchives/foo.png
+  git add _datarchives/foo_thumbnail.png
   git commit -a -m 'adding foo to collection'
   git push
   ```
