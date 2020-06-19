@@ -7,17 +7,20 @@ and for other purposes. These datasets are managed using
 [GitHub's Large File Support (LFS)](https://git-lfs.github.com) but are also
 available to download individually via HTTPs from this website.
 
-For help contributing, see these resources...
+For help using or contributing, see these resources...
 
-* [Adding data files](help/adding-data-help.md)
-* [Markdown primer](help/markdown-help.md) 
-
+* [Adding data files](help/adding-download-files.md)
+* [Specifying download links](help/about-download-links.md)
+* [Using this repo to upload data from users](help/using-for-uploads.md)
+* [Using 7zip](help/7zip.md)
+* [Markdown primer](help/markdown.md) 
+* [Notes about the GH pages theme](help/about-theme.md)
 
 In the table below...
 
 * Clicking a size link downloads the data in the indicated format.
 * Clicking a title or image link gives more info about the download.
-* `.7z` is often 2-3x smaller but see [our guidance](help/7zip-help.md) for help with it.
+* `.7z` is often 2-3x smaller but see [our guidance](help/7zip.md) for help with it.
 
 <table>
   <caption>Data downloads available here</caption>
