@@ -2,6 +2,7 @@
 layout: datarchive
 title: MRI
 stem: mri_tutorial_data
+has_image: true
 nbytes:
   7z: 788306
   tgz: 1122991
@@ -15,4 +16,5 @@ md5:
   tgz: 656be87b2248fa1c03636798f70ea3eb
   zip: 11c5fc575817f9de83838768d6bd8ee3
 ---
-This is the data bundle used in the MRI tutorial.
+This is the data bundle used in the
+[MRI tutorial](https://visit-sphinx-github-user-manual.readthedocs.io/en/develop/tutorials/MRI.html)

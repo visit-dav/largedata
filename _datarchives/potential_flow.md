@@ -2,6 +2,7 @@
 layout: datarchive
 title: Potential Flow
 stem: potential_flow_tutorial_data
+has_image: true
 nbytes:
   7z: 62216561
   tgz: 161211121
@@ -15,4 +16,6 @@ md5:
   tgz: 815a5f95464cc3ed8c3cd1c92b0ab0ec
   zip: e5540585f5d56c0066d40604766537c6
 ---
-This is the data bundle used in the Potential Flow tutorial.
+This is the data bundle used in the
+[Potential Flow](https://visit-sphinx-github-user-manual.readthedocs.io/en/develop/tutorials/PotentialFlow.html#)
+tutorial.
