@@ -1,7 +1,22 @@
-## How to add data files
+## How to add files
+
+This repository is configured to treat [various file extensions](../.gitattributes)
+using
+[GitHub's Large File Support](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage).
+The repository can be used to host many kinds of large files including
+PowerPoint presentations, data archives, movies, etc.
+
+Below, we show the instructions for adding binary data archives. Apart from
+perhaps skipping the first step to create and compress an archive file, the
+same procedure can be used to add PowerPoint presentations, movies, etc.
+
+### Adding a data archive
 
 The instructions below are written assuming all data files to be added are stored
-in a directory named `foo_data`.
+in a directory named `foo_data`. When creating archives, it is a best practice to
+ensure all files in the archive expand into a single top-level directory which is
+the same name as the archive file name without the extension. For example, all
+files in the `foo_data.tar.gz` file would expand into a directory named `foo_data.`
 
 1. It is not a *requirement* but please try to create all download format options,
 `.7z`, `.tar.gz` and `.zip` whenever possible. If you provide only one option, `.tar.gz`
@@ -14,19 +29,26 @@ format. The advantages of the various formats are...
        [Linux](https://www.7-zip.org/download.html).
      * Tools are not often *pre-built* on most systems so users wind up
        having to download and install them prior to use.
+     * A command to produce a `7z` compressed data file...
+     ```
+     7z a -y -m0=lzma2 -mx=9 foo_data.7z foo_data
+     ```
    * `.tar.gz` (aka `.tgz`, [tarball](https://en.wikipedia.org/wiki/Tar_(computing)))
      * Most commonly used on Linux/Unix systems.
      * Windows and Mac tools often handle `.tar.gz` files.
      * Best format if you only provide one download option.
+     * A command to produce a `.tar.gz` compressed data file...
+     ```
+     tar cvf - foo_data | gzip --best > foo_data.tar.gz
+     ```
    * `.zip` ([zip](https://en.wikipedia.org/wiki/Zip_(file_format)))
      * Most commonly used on Windows systems.
      * Linux/Unix and Mac tools often handle `.zip` files.
+     * A command to produce a `.zip` compressed data file...
+     ```
+     zip -9 foo_data.zip foo_data 
+     ```
 
-   ```
-   7z a -y -m0=lzma2 -mx=9 foo_data.7z foo_data
-   tar cvf - foo_data | gzip --best > foo_data.tar.gz
-   zip -9 foo_data.zip foo_data 
-   ```
 1. Add your data files to the `bindata` directory. Because we don't expect content here
 to be simultaneously revised by multiple developers or to be changing on a frequent basis,
 it is perfectly fine to do all the work here directly on the `master` branch.
@@ -38,19 +60,12 @@ it is perfectly fine to do all the work here directly on the `master` branch.
    git commit -a -m 'adding foo data'
    git push
    ```
-   **Note:** It is a best practice to name the resulting file (not including the
-extension) with the same name as the directory it *expands* into.
-1. Pushing your added data files to GitHub can take a long time depending on file sizes.
-Once the operation completes, the files you see in the repo on GitHub will be
+1. Pushing your added data files to GitHub can take a long time depending on file
+sizes. Once the operation completes, be aware that the files you see in the repo
+on GitHub will be
 [LFS *pointer* files ](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage#pointer-file-format).
-Anyone cloning the repo will get only these *pointer* files and not the actual
-data files. To get to the actual data files the LFS *pointer* files reference, a
-`git-lfs pull` operation is used. A problem with this operation is that downloads
-*every* LFS file in the repo. It cannot be used to selectively download only
-one of the data files here. To enable users to selectively download specific files,
-we provide HTTPs access to those files through this website using
-GitHub *magic* URL to access their *raw* contents. See the notes below regarding
-the [download links](#about-the-download-links)
+See instructions regarding [download links](about-download-links.md) about how
+to define links to LFS'd content.
 1. Create the dataset's landing page by creating a markdown file, `foo.md`, in the
 `_datarchives` *collection* directory. In the
 front-matter for this file, you may optionally define the file sizes, sha256 and md5
@@ -72,36 +87,3 @@ this, be sure to set the variable `has_image: true` in `foo.md`
    ```
 1. Wait for the site to rebuild. This usually takes less than a few minutes after
 your push.
-
-### About the download links
-
-The download path to the `.tar.gz` *raw* data file (not the LFS *pointer* file),
-for example, will look like...
-
-```
-https://github.com/visit-dav/largedata/blob/master/bindata/foo_data.tar.gz?raw=true
-```
-
-You can use this link anywhere including in email to give users the link to get that
-specific data file. Users do not require a GitHub account in order to access data
-through this link.
-
-Better still, give them a link to the `datarchives` page for the dataset, which will
-look something like...
-
-```
-https://visit-dav.github.io/largedata/datarchives/foo
-```
-
-which takes users to a page with more information about the dataset including all the
-download format options (e.g. `.7z`, `.tar.gz`, `.zip`, etc.) and integrity checks.
-
-### A few notes about this repo's Jekyll design
-
-This repo is using GitHub's *builtin* [minimal](https://pages-themes.github.io/minimal/)
-gh-pages theme. Because it is a GitHub *builtin* theme, its structure is *hugely* simplified
-compared to an ordinary, custom [*Jekyll*](https://jekyllrb.com) theme based site.
-Nonetheless, this site still uses some portions of a standard, custom *Jekyll* site
-including the use of Liquid templating language in some files, the use of Jekyll
-*collections* for the `datarchive` collection and the use of a *layout* specifically for
-pages of the `datarchive` collection.
