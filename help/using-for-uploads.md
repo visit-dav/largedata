@@ -1,4 +1,4 @@
-## Using this repo to upload data files from users
+## Options for uploading large files
 
 If a user needs to get data to VisIt developers for any reason,
 the options available depend on the size of the files. In all of

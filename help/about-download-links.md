@@ -8,14 +8,14 @@ A question is, how do you specify a download link to the actual data files?
 
 ### A quick note about cloning and git lfs pull
 
-First, anyone cloning the repo will get only these *pointer* files and not the actual
+First, anyone cloning the repo will get only LFS *pointer* files and not the actual
 data files. To get to the actual data files in a cloned repository, a
 `git lfs pull` operation is needed. But, **BE CAREFUL**!! An unqualified `git lfs pull`
-operation downloads *every* LFS file in the repo. If you are interested in only
-specific files, use the `--include` option to `git lfs pull` to identify the
-specific file(s) you want to fully download.
+operation downloads *every* LFS file in the repo which could take hours. If you are
+interested in only specific files, use the `--include` option to `git lfs pull` to
+identify the specific file(s) you want to fully download.
 
-### Defining links to download specific files
+### Links to download specific files
 
 When writing emails or documentation which includes links to files to be
 downloaded, cloning and git lfs is not used. Instead, we we provide HTTPs access
@@ -40,5 +40,5 @@ look something like...
 https://visit-dav.github.io/largedata/datarchives/foo
 ```
 
-This takes users to a page with more information about the dataset including all the
+This takes users to a page with more information about the file including all the
 download format options (e.g. `.7z`, `.tar.gz`, `.zip`, etc.) and their integrity checks.
