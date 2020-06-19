@@ -14,7 +14,7 @@ can often yield the best compression by sometimes a factor of 2-3x.
   * Only a handful of specific file extensions are supported.
   * Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.
     * Images larger than 10MB or other image formats can still be attached by 
-      *compressing* the image to a `.gz` or .zip` file (see below) first.
+    *compressing* the image to a `.gz` or `.zip` file (see below) first.
   * Raw text files (`.txt`, and `.log`) < 25MB.
   * Document files (`.pdf`, `.docx`, `.pptx`, and `.xlsx`) < 25MB.
   * Compressed files (`.gz`, `.zip`) < 25MB.
@@ -38,12 +38,12 @@ This involves using a combination of a web browser on GitHub and
 a shell command-line.
 
 1. First, fork the repository on GitHub
-   * Open a browser to https://github.com/visit-dav/largedata
+   * Open a browser to [https://github.com/visit-dav/largedata](https://github.com/visit-dav/largedata)
    * Find and press the `Fork` button in the upper right
    * GitHub will ask you *where* you want to create the fork.
    * Create the fork in your personal space on GitHub.
    * Lets assume your GitHub name is `fizbo`.
-   * Once you create the fork, it 
+   * Once you create the fork, clone it 
 2. Create a local clone
    * Its best to use `ssh` to create the clone.
    ```
@@ -63,15 +63,18 @@ a shell command-line.
    ```
    * **Note:** depending on the size of your files, it may take a 
    long time for the `git push` operation to complete.
-   * Even after completing the steps above, the data file is on GitHub but it
-   is not accessible by anyone other than you, fizbo. To make it accessible to
+   * Even after completing the steps above, the files are on GitHub but
+   not accessible by anyone other than you, fizbo. To make them accessible to
    the VisIt team, you need to create a pull request.
 4. Create a pull request
-   * From your browser, go to https://github.com/visit-dav/largedata/compare to create a pull request
+   * From your browser, go to
+   [https://github.com/visit-dav/largedata/compare](https://github.com/visit-dav/largedata/compare)
+   to create a pull request
    * Select the `compare across forks` text link and then select the repo you forked above from the list.
-   * GitHub will constract a this URL https://github.com/visit-dav/largedata/compare/master...fizbo:master
+   * GitHub will constract a this URL
+   [https://github.com/visit-dav/largedata/compare/master...fizbo:add-data-from-fizbo](https://github.com/visit-dav/largedata/compare/master...fizbo:add-data-from-fizbo)
    * Press the `Create pull request` button.
    * Once the last step is completed, the pull request, which includes the
    data file(s) you have added will be accessible to the VisIt team.
 5. After whatever issues associated the data are resolved, VisIt team members
-   may close the pull request.
+   will close the pull request.
