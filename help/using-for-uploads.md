@@ -10,7 +10,7 @@ can often yield the best compression by sometimes a factor of 2-3x.
   * Works ok for small files, less than 5-10MB. The actual size limit
     depends on several factors which are likely outside the knowledge 
     of sender and recipeint.
-* Attachments in our [SRE issues repo](https://github.com/visit-dav/live-customer-response/issues)
+* Attachments to [SRE issue](https://github.com/visit-dav/live-customer-response/issues) comments
   * Only a handful of specific file extensions are supported.
   * Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.
   * Raw text files (`.txt`, and `.log`) < 25MB.
@@ -49,10 +49,12 @@ a shell command-line.
    * Once you create the fork, clone it 
 2. Create a local clone
    * Its best to use `ssh` to create the clone.
+
 ```
 git clone git@github.com:fizbo/largedata.git
 ```
    * If you use `https`, be aware of [extra steps if you use two-factor authentication](https://help.github.com/en/github/authenticating-to-github/accessing-github-using-two-factor-authentication#using-two-factor-authentication-with-the-command-line)
+
 ```
 git clone https://github.com/fizbo/largedata.git 
 ```
