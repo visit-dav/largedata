@@ -10,7 +10,7 @@ can often yield the best compression by sometimes a factor of 2-3x.
   * Works ok for small files, less than 5-10MB. The actual size limit
     depends on several factors which are likely outside the knowledge 
     of sender and recipeint.
-* GitHub issue conversation attachments
+* Attachments in our [SRE issues repo](https://github.com/visit-dav/live-customer-response/issues)
   * Only a handful of specific file extensions are supported.
   * Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.
     * Images larger than 10MB or other image formats can still be attached by 

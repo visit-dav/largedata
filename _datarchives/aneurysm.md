@@ -16,4 +16,5 @@ md5:
   tgz: 1f29b66da161e77632b27c2528495ebf
   zip: 92dbfa8b116c3d3b981459b9f8dbe4aa
 ---
-This is the data bundle used in the aneurysm tutorial.
+This is the data bundle used in the
+[aneurysm tutorial](https://visit-sphinx-github-user-manual.readthedocs.io/en/develop/tutorials/Aneurysm.html).
