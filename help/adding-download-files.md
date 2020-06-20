@@ -31,6 +31,7 @@ format. The advantages of the various formats are...
      * Tools are not often *pre-built* on most systems so users wind up
        having to download and install them prior to use.
      * A command to produce a `7z` compressed data file...
+
 ```
 7z a -y -m0=lzma2 -mx=9 foo_data.7z foo_data
 ```
@@ -39,6 +40,7 @@ format. The advantages of the various formats are...
      * Windows and Mac tools often handle `.tar.gz` files.
      * Best format if you only provide one download option.
      * A command to produce a `.tar.gz` compressed data file...
+
 ```
 tar cvf - foo_data | gzip --best > foo_data.tar.gz
 ```
@@ -46,6 +48,7 @@ tar cvf - foo_data | gzip --best > foo_data.tar.gz
      * Most commonly used on Windows systems.
      * Linux/Unix and Mac tools often handle `.zip` files.
      * A command to produce a `.zip` compressed data file...
+
 ```
 zip -9 foo_data.zip foo_data 
 ```
