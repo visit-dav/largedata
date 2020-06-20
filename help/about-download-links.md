@@ -22,23 +22,30 @@ downloaded, cloning and git lfs is not used. Instead, we we provide HTTPs access
 to those files through the website that is hosted from this repository using GitHub
 *magic* URL to access their *raw* contents.
 
-The download path for `foo_data.tar.gz` (not the LFS *pointer* file), for example,
-will look something like...
+The download path for
+[`aneurysm_tutorial_data.tar.gz`](https://github.com/visit-dav/largedata/blob/master/bindata/aneurysm_tutorial_data.tar.gz?raw=true)
+(not the LFS *pointer* file),
+for example, will look something like...
 
 ```
-https://github.com/visit-dav/largedata/blob/master/bindata/foo_data.tar.gz?raw=true
+https://github.com/visit-dav/largedata/blob/master/bindata/aneurysm_tutorial_data.tar.gz?raw=true
 ```
 
 You can use this link anywhere including in email to give users the link to get that
 specific data file. Users do not require a GitHub account in order to access data
 through this link.
 
-Better still, give them a link to the *landing page* for the file, which will
+Better still, give them a link to the *landing page* for the file. For the
+[aneurysm data](https://visit-dav.github.io/largedata/datarchives/aneurysm), it will
 look something like...
 
 ```
-https://visit-dav.github.io/largedata/datarchives/foo
+https://visit-dav.github.io/largedata/datarchives/aneurysm
 ```
 
-This takes users to a page with more information about the file including all the
-download format options (e.g. `.7z`, `.tar.gz`, `.zip`, etc.) and their integrity checks.
+The last entry in the URL, `aneurysm` in this example, is whatever the name of the
+markdown file hosting information about the data is *without* the extension.
+
+The landing page link takes users to a page with more information about the file
+including maybe images as well as all the download format options
+(e.g. `.7z`, `.tar.gz`, `.zip`, etc.) and their integrity checks.
