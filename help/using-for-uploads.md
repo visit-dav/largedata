@@ -18,8 +18,8 @@ can often yield the best compression by sometimes a factor of 2-3x.
   * Compressed files (`.gz`, `.zip`) < 25MB.
   * Because GitHub currently keys off *only* the file's extension, you can
     attach *any* format by simply faking and adding the `.gz` extension.
-    In particular, To use 7zip, create the `.7z` file and append a `.gz`
-    extension as in `foo_data.7z.gz`.
+    To avoid confusion with a *real* gzip compressed file, also add an
+    obvious intermediate extension such as `foo_data.7z.fake.gz`.
 * [LLNL Anonymous FTP server](ftp://ftp.llnl.gov/incoming)
   * Works only to get data to VisIt developers with LLNL accounts.
   * Size limit depends on aggregate usage by all uploads there but probably < 1GB.
