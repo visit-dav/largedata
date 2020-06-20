@@ -13,20 +13,23 @@ can often yield the best compression by sometimes a factor of 2-3x.
 * Attachments in our [SRE issues repo](https://github.com/visit-dav/live-customer-response/issues)
   * Only a handful of specific file extensions are supported.
   * Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.
-    * Images larger than 10MB or other image formats can still be attached by 
-    *compressing* the image to a `.gz` or `.zip` file (see below) first.
   * Raw text files (`.txt`, and `.log`) < 25MB.
   * Document files (`.pdf`, `.docx`, `.pptx`, and `.xlsx`) < 25MB.
   * Compressed files (`.gz`, `.zip`) < 25MB.
+  * Because GitHub currently keys off *only* the file's extension, you can
+    attach *any* format by simply faking and adding the `.gz` extension.
+    In particular, To use 7zip, create the `.7z` file and append a `.gz`
+    extension as in `foo_data.7z.gz`.
 * [LLNL Anonymous FTP server](ftp://ftp.llnl.gov/incoming)
   * Works only to get data to VisIt developers with LLNL accounts.
   * Size limit depends on aggregate usage by all uploads there but probably < 1GB.
   * On Windows and linux, open a browser to the above link and drag and drop
     your files there. On OSX, from Finder select `Go->Connect to server` and enter
     `ftp://ftp.llnl.gov/incoming` and then drag and drop your files there.
-  * Email VisIt developers with the name(s) of the files you uploaded there.
+  * Email VisIt developers with the name(s) of the files you uploaded there
+    so they know to go get them.
   * Files uploaded there are readable only from LLNL firewalled networks and are
-    purged every few days.
+    purged regularly.
 * Submit a PR from a [fork of this repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
   * Works for *any* VisIt developer
   * [Size limit is < 2GB](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage)
@@ -71,7 +74,7 @@ a shell command-line.
    [https://github.com/visit-dav/largedata/compare](https://github.com/visit-dav/largedata/compare)
    to create a pull request
    * Select the `compare across forks` text link and then select the repo you forked above from the list.
-   * GitHub will constract a this URL
+   * GitHub constructs a URL such as this
    [https://github.com/visit-dav/largedata/compare/master...fizbo:add-data-from-fizbo](https://github.com/visit-dav/largedata/compare/master...fizbo:add-data-from-fizbo)
    * Press the `Create pull request` button.
    * Once the last step is completed, the pull request, which includes the
