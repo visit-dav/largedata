@@ -4,6 +4,8 @@ This repository is configured to treat files with various extensions
 listed below using
 [GitHub's Large File Support](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage).
 
+<iframe width="600" src="https://raw.githubusercontent.com/visit-dav/largedata/master/.gitattributes" frameborder="0"></iframe>
+
 <pre>
 {% include_relative gitattributes %}
 </pre>
