@@ -1,20 +1,13 @@
 ## How to add files
 
-This repository is configured to treat files with various extensions
-listed below using
+This repository can be used to host many kinds of large files including
+PowerPoint presentations, data archives, movies, 3D object files, etc.
+The repository is configured to treat files with
+[various extensions](https://raw.githubusercontent.com/visit-dav/largedata/master/.gitattributes)
+using
 [GitHub's Large File Support](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage).
 
-<iframe width="600" src="https://raw.githubusercontent.com/visit-dav/largedata/master/.gitattributes" frameborder="0"></iframe>
-
-<pre>
-{% include_relative gitattributes %}
-</pre>
-
-
-The repository can be used to host many kinds of large files including
-PowerPoint presentations, data archives, movies, etc.
-
-Below, we show the instructions for adding binary data archives. Apart from
+Below, we provide instructions for adding binary data archives. Apart from
 perhaps skipping the first step to create and compress an archive file, the
 same procedure can be used to add PowerPoint presentations, movies, etc.
 
