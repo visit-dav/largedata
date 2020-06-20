@@ -49,13 +49,13 @@ a shell command-line.
    * Once you create the fork, clone it 
 2. Create a local clone
    * Its best to use `ssh` to create the clone.
-   ```
-   git clone git@github.com:fizbo/largedata.git
-   ```
+```
+git clone git@github.com:fizbo/largedata.git
+```
    * If you use `https`, be aware of [extra steps if you use two-factor authentication](https://help.github.com/en/github/authenticating-to-github/accessing-github-using-two-factor-authentication#using-two-factor-authentication-with-the-command-line)
-   ```
-   git clone https://github.com/fizbo/largedata.git 
-   ```
+```
+git clone https://github.com/fizbo/largedata.git 
+```
 3. Add, commit and push file(s) to the `bindata` directory
    ```
    cd largedata/bindata
