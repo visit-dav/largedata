@@ -86,7 +86,7 @@ this, be sure to set the variable `has_image: true` in `foo.md`
    git add _datarchives/foo.md
    git add _datarchives/foo.png
    git add _datarchives/foo_thumbnail.png
-   git commit -a -m 'adding foo page datarchives collection'
+   git commit -a -m 'adding foo data'
    git push
    ```
 1. Wait for the site to rebuild. This usually takes less than a few minutes after
