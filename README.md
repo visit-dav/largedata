@@ -34,10 +34,10 @@ In the table below...
 {% for darch in site.datarchives %}
     {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
     {% assign nkzip = darch.nbytes.zip | divided_by: 1000 %}
-    {% assign nk7z = darch.nbytes.7z | divided_by: 1000 %}
+    {% assign nk7z = darch.nbytes.p7z | divided_by: 1000 %}
     {% assign nMtgz = darch.nbytes.tgz | divided_by: 1000000 %}
     {% assign nMzip = darch.nbytes.zip | divided_by: 1000000 %}
-    {% assign nM7z = darch.nbytes.7z | divided_by: 1000000 %}
+    {% assign nM7z = darch.nbytes.p7z | divided_by: 1000000 %}
     {% if nktgz < 1000 %}
         {% assign ntgz = nktgz | append: "KB" %}
     {% else %}
@@ -63,7 +63,7 @@ In the table below...
     {% else %}
         <td style="text-align: left">None</td>
     {% endif %}
-    {% if darch.nbytes.7z %}
+    {% if darch.nbytes.p7z %}
         <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true" title="Click to download .7z file now">{{ n7z }}</a></td>
     {% else %}
         <td style="text-align: right">N/A</td>

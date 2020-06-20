@@ -17,7 +17,7 @@ layout: default
   <tr>
     <th colspan="2">Download format options</th>
   </tr>
-  {% if page.nbytes.7z %}
+  {% if page.nbytes.p7z %}
   <tr>
     <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}.7z?raw=true">{{ page.stem }}.7z</a></code></td>
   </tr>
@@ -36,10 +36,10 @@ layout: default
     <th>Format</th>
     <th>Size</th>
   </tr>
-  {% if page.nbytes.7z %}
+  {% if page.nbytes.p7z %}
   <tr>
     <td><code>.7z</code></td>
-    <td><code>{{ page.nbytes.7z }}</code></td>
+    <td><code>{{ page.nbytes.p7z }}</code></td>
   </tr>
   {% endif %}
   {% if page.nbytes.tgz %}
@@ -58,10 +58,10 @@ layout: default
     <th>Format</th>
     <th>SHA 256</th>
   </tr>
-  {% if page.nbytes.7z %}
+  {% if page.nbytes.p7z %}
   <tr>
     <td><code>.7z</code></td>
-    <td><code>{{ page.sha256.7z }}</code></td>
+    <td><code>{{ page.sha256.p7z }}</code></td>
   </tr>
   {% endif %}
   {% if page.nbytes.tgz %}
@@ -80,10 +80,10 @@ layout: default
     <th>Format</th>
     <th>MD5</th>
   </tr>
-  {% if page.nbytes.7z %}
+  {% if page.nbytes.p7z %}
   <tr>
     <td><code>.7z</code></td>
-    <td><code>{{ page.md5.7z }}</code></td>
+    <td><code>{{ page.md5.p7z }}</code></td>
   </tr>
   {% endif %}
   {% if page.nbytes.tgz %}

@@ -4,7 +4,10 @@ This repository is configured to treat files with various extensions
 listed below using
 [GitHub's Large File Support](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage).
 
-{% include_relative ../.gitattributes %}
+<pre>
+{% include_relative gitattributes %}
+</pre>
+
 
 The repository can be used to host many kinds of large files including
 PowerPoint presentations, data archives, movies, etc.
