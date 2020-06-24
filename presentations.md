@@ -4,18 +4,20 @@ In the table below...
 
 * Clicking a size link downloads the data in the indicated format.
 * Clicking a title or image link gives more info about the download.
-* `.7z` is often 2-3x smaller but see [our guidance](help/7zip.md) for help with it.
+* For any `.7z` content see [our guidance](help/7zip.md) for help with it.
 
 <table>
   <caption>Presentations available here</caption>
   <tr>
     <th style="text-align: left">Title</th>
     <th style="text-align: left">Thumbnail</th>
-    <th style="text-align: right"><code>.7z</code></th>
-    <th style="text-align: right"><code>.tar.gz</code></th>
-    <th style="text-align: right"><code>.zip</code></th>
+    {% for darch in site.presentations limit:1 %}
+      {% for fmt in darch.formats %}
+        <th style="text-align: right"><code>{{fmt}}</code></th>
+      {% endfor %}
   </tr>
-{% for darch in site.datarchives %}
+
+
     {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
     {% assign nkzip = darch.nbytes.zip | divided_by: 1000 %}
     {% assign nk7z = darch.nbytes.p7z | divided_by: 1000 %}

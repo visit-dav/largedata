@@ -3,10 +3,6 @@ layout: presentation
 title: Optimizing Color Application
 stem: samsel_25Jun20_optimizing_color
 has_image: true
-formats:
-  - .opt.pdf
-  - .pdf
-  - .pptx
 nbytes:
   - 17434581
   - 151372024
