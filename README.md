@@ -19,5 +19,5 @@ For help using or contributing, see these resources...
 ### Available Collections
 
 {% for coll in site.collections %}
-* [{{coll}}]({{coll}}.md)
+* [{{coll.label}}]({{coll.label}}.md)
 {% endfor %}
