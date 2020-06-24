@@ -4,3 +4,5 @@ rawdata_baseurl: https://github.com/visit-dav/largedata/blob/master/bindata
 collections:
   datarchives:
     output: true
+  presentations:
+    output: true

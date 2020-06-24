@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<h3>{{ page.title }}</h3>
+
+{% if page.has_image %}
+  {% assign img_file_name = page.path | split: '/' | last %}
+  {% assign len = img_file_name | size | minus: 2 %}
+  {% assign img_file_name2 = img_file_name | truncate: len, "" | append: "png" %}
+  <img src="{{ img_file_name2 }}" style="float:left;width:250px;margin:0px 20px;">
+{% endif %}
+
+{{ page.content }}
+
+{% assign ncols = page.formats | size %}
+
+<table>
+  <tr>
+    <th colspan="2">Download format options</th>
+  </tr>
+  {% for i in (0..ncols) %}
+    <tr>
+      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}{{page.formats[i]}}?raw=true">{{ page.stem }}{{page.formats[i]}}</a></code></td>
+    </tr>
+  {% endfor %}
+
+  <tr>
+    <th>Format</th>
+    <th>Size</th>
+  </tr>
+  {% for i in (0..ncols) %}
+    <tr>
+      <td><code>{{page.formats[i]}}</code></td>
+      <td><code>{{page.nbytes[i]}}</code></td>
+    </tr>
+  {% endfor %}
+
+  <tr>
+    <th>Format</th>
+    <th>SHA 256</th>
+  </tr>
+  {% for i in (0..ncols) %}
+    <tr>
+      <td><code>{{page.formats[i]}}</code></td>
+      <td><code>{{page.sha256[i]}}</code></td>
+    </tr>
+  {% endfor %}
+
+  <tr>
+    <th>Format</th>
+    <th>MD5</th>
+  </tr>
+  {% for i in (0..ncols) %}
+    <tr>
+      <td><code>{{page.formats[i]}}</code></td>
+      <td><code>{{page.md5[i]}}</code></td>
+    </tr>
+  {% endfor %}
+
+</table>
