@@ -1,6 +1,3 @@
----
-layout: presentation
----
 ## Presentations Collection
 
 In the table below...
