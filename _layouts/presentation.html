@@ -1,9 +1,5 @@
 ---
 layout: default
-formats:
-  - .opt.pdf
-  - .pdf
-  - .pptx
 ---
 
 <h3>{{ page.title }}</h3>
@@ -17,7 +13,7 @@ formats:
 
 {{ page.content }}
 
-{% assign ncols = layout.formats | size %}
+{% assign ncols = page.collection.formats | size %}
 
 <table>
   <tr>
@@ -25,7 +21,7 @@ formats:
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}{{layout.formats[i]}}?raw=true">{{ page.stem }}{{layout.formats[i]}}</a></code></td>
+      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}{{page.collection.formats[i]}}?raw=true">{{ page.stem }}{{page.collection.formats[i]}}</a></code></td>
     </tr>
   {% endfor %}
 
@@ -35,7 +31,7 @@ formats:
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td><code>{{layout.formats[i]}}</code></td>
+      <td><code>{{page.collection.formats[i]}}</code></td>
       <td><code>{{page.nbytes[i]}}</code></td>
     </tr>
   {% endfor %}
@@ -46,7 +42,7 @@ formats:
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td><code>{{layout.formats[i]}}</code></td>
+      <td><code>{{page.collection.formats[i]}}</code></td>
       <td><code>{{page.sha256[i]}}</code></td>
     </tr>
   {% endfor %}
@@ -57,7 +53,7 @@ formats:
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td><code>{{layout.formats[i]}}</code></td>
+      <td><code>{{page.collection.formats[i]}}</code></td>
       <td><code>{{page.md5[i]}}</code></td>
     </tr>
   {% endfor %}

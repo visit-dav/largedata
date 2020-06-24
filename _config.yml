@@ -5,4 +5,8 @@ collections:
   datarchives:
     output: true
   presentations:
+    formats:
+      - .opt.pdf
+      - .pdf
+      - .pptx
     output: true
