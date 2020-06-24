@@ -15,13 +15,8 @@ For help using or contributing, see these resources...
 * [Using 7zip](help/7zip.md)
 * [Markdown primer](help/markdown.md) 
 * [Notes about the GH pages theme](help/about-theme.md)
-* [Presentations](help/presentations-page.md)
 
 ### Available Collections
 
-{% for coll in site.collections %}
-{%- if coll.label  == "posts" -%}
-    {% continue -%}
-{%- endif -%}
-* [{{coll.label}}](help/{{coll.label}}-page.md)
-{% endfor %}
+* [Presentations](presentations.md)
+* [Data Archives](datarchives.md)
