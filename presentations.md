@@ -1,3 +1,6 @@
+---
+layout: presentation
+---
 ## Presentations Collection
 
 In the table below...
@@ -11,59 +14,41 @@ In the table below...
   <tr>
     <th style="text-align: left">Title</th>
     <th style="text-align: left">Thumbnail</th>
-    {% for darch in site.presentations limit:1 %}
-      {% for fmt in darch.formats %}
-        <th style="text-align: right"><code>{{fmt}}</code></th>
-      {% endfor %}
+    {% for fmt in layout.formats %}
+      <th style="text-align: right"><code>{{fmt}}</code></th>
+    {% endfor %}
   </tr>
 
+{% assign ncols = layout.formats | size %}
 
-    {% assign nktgz = darch.nbytes.tgz | divided_by: 1000 %}
-    {% assign nkzip = darch.nbytes.zip | divided_by: 1000 %}
-    {% assign nk7z = darch.nbytes.p7z | divided_by: 1000 %}
-    {% assign nMtgz = darch.nbytes.tgz | divided_by: 1000000 %}
-    {% assign nMzip = darch.nbytes.zip | divided_by: 1000000 %}
-    {% assign nM7z = darch.nbytes.p7z | divided_by: 1000000 %}
-    {% if nktgz < 1000 %}
-        {% assign ntgz = nktgz | append: "KB" %}
+{% for pres in site.presentations %}
+
+  {% assign len = pres.relative_path | size %}
+  {% assign len2 = len | minus: 3 %}
+  {% assign new_relative_path = pres.relative_path | truncate: len2, "" | remove_first: "_" %}
+  <tr>
+     <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ pres.title }}</a></td>
+  {% if pres.has_image %}
+     <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="{{ new_relative_path }}_thumb.png" style="height:48px;"></a></td>
+  {% else %}
+     <td style="text-align: left">None</td>
+  {% endif %}
+
+  {% for i in (0..ncols) %}
+
+    {% assign nksize = pres.nbytes[i] | divided_by: 1000 %}
+    {% assign nMsize = pres.nbytes[i] | divided_by: 1000000 %}
+    {% if nksize < 1000 %}
+        {% assign nsize = nksize | append: "KB" %}
     {% else %}
-        {% assign ntgz = nMtgz | append: "MB" %}
+        {% assign nsize = nMsize | append: "MB" %}
     {% endif %}
-    {% if nkzip < 1000 %}
-        {% assign nzip = nkzip | append: "KB" %}
-    {% else %}
-        {% assign nzip = nMzip | append: "MB" %}
-    {% endif %}
-    {% if nk7z < 1000 %}
-        {% assign n7z = nk7z | append: "KB" %}
-    {% else %}
-        {% assign n7z = nM7z | append: "MB" %}
-    {% endif %}
-    {% assign len = darch.relative_path | size %}
-    {% assign len2 = len | minus: 3 %}
-    {% assign new_relative_path = darch.relative_path | truncate: len2, "" | remove_first: "_" %}
-    <tr>
-        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file">{{ darch.title }}</a></td>
-    {% if darch.has_image %}
-        <td style="text-align: left"><a href="{{ new_relative_path }}" title="Click for more info about this file"><img src="{{ new_relative_path }}_thumb.png" style="height:48px;"></a></td>
-    {% else %}
-        <td style="text-align: left">None</td>
-    {% endif %}
-    {% if darch.nbytes.p7z %}
-        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.7z?raw=true" title="Click to download .7z file now">{{ n7z }}</a></td>
-    {% else %}
-        <td style="text-align: right">N/A</td>
-    {% endif %}
-    {% if darch.nbytes.tgz %}
-        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.tar.gz?raw=true" title="Click to download .tar.gz file now">{{ ntgz }}</a></td>
-    {% else %}
-        <td style="text-align: right">N/A</td>
-    {% endif %}
-    {% if darch.nbytes.zip %}
-        <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ darch.stem }}.zip?raw=true" title="Click to ownload .zip file now">{{ nzip }}</a></td>
-    {% else %}
-        <td style="text-align: right">N/A</td>
-    {% endif %}
+
+    <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ pres.stem }}{{layout.formats[i]}}?raw=true" title="Click to download file now">{{ nsize }}</a></td>
+    {% endfor %}
+
     </tr>
+
 {% endfor %}
+
 </table>
