@@ -22,5 +22,5 @@ For help using or contributing, see these resources...
 {%- if coll.label  == "posts" -%}
     {% continue -%}
 {%- endif -%}
-* [{{coll.label}}]({{coll.label}}.md)
+* [{{coll.label}}]({{coll.label}}-page.md)
 {%- endfor -%}

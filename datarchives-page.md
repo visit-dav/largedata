@@ -1,6 +1,3 @@
----
-layout: default
----
 ## Data Archives Collection
 
 In the table below...
