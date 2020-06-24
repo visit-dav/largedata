@@ -18,9 +18,9 @@ For help using or contributing, see these resources...
 
 ### Available Collections
 
-{%- for coll in site.collections -%}
+{% for coll in site.collections %}
 {%- if coll.label  == "posts" -%}
     {% continue -%}
 {%- endif -%}
-* [{{coll.label}}]({{coll.label}}-page.md)
-{%- endfor -%}
+* [{{coll.label}}](help/{{coll.label}}-page.md)
+{% endfor %}
