@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 logo: https://raw.githubusercontent.com/visit-dav/visit-website/gh-pages/images/gallery-27.jpg
-rawdata_baseurl: https://github.com/visit-dav/largedata/blob/master/bindata
+rawdata_baseurl: https://github.com/visit-dav/largedata/blob/master
 collections:
   datarchives:
     output: true
