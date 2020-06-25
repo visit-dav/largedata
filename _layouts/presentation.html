@@ -13,7 +13,15 @@ layout: default
 
 {{ page.content }}
 
-{% assign ncols = page.collection.formats | size %}
+{% assign pres_coll = 0 %}
+{% for coll in site.collections %}
+    {% if coll.label == "presentations" %}
+        {% assign pres_coll = coll %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{% assign ncols = pres_coll.formats | size %}
 
 <table>
   <tr>
@@ -21,7 +29,7 @@ layout: default
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}{{page.collection.formats[i]}}?raw=true">{{ page.stem }}{{page.collection.formats[i]}}</a></code></td>
+      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/{{ page.stem }}{{pres_coll.formats[i]}}?raw=true">{{ page.stem }}{{pres_coll.formats[i]}}</a></code></td>
     </tr>
   {% endfor %}
 
@@ -31,7 +39,7 @@ layout: default
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td><code>{{page.collection.formats[i]}}</code></td>
+      <td><code>{{pres_coll.formats[i]}}</code></td>
       <td><code>{{page.nbytes[i]}}</code></td>
     </tr>
   {% endfor %}
@@ -42,7 +50,7 @@ layout: default
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td><code>{{page.collection.formats[i]}}</code></td>
+      <td><code>{{pres_coll.formats[i]}}</code></td>
       <td><code>{{page.sha256[i]}}</code></td>
     </tr>
   {% endfor %}
@@ -53,7 +61,7 @@ layout: default
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td><code>{{page.collection.formats[i]}}</code></td>
+      <td><code>{{pres_coll.formats[i]}}</code></td>
       <td><code>{{page.md5[i]}}</code></td>
     </tr>
   {% endfor %}
