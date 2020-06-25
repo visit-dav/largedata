@@ -2,8 +2,8 @@
 
 This [website](https://visit-dav.github.io/largedata/) and the
 [GitHub repo](https://github.com/visit-dav/largedata/) that backs it up
-is where the VisIt project hosts large datasets used in examples, tutorials
-and for other purposes. These datasets are managed using
+is where the VisIt project hosts large files and datasets used in examples,
+tutorials and for other purposes. These files are managed using
 [GitHub's Large File Support (LFS)](https://git-lfs.github.com) but are also
 available to download individually via HTTPs from this website.
 
