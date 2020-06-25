@@ -14,17 +14,17 @@ In the table below...
     {% endif %}
 {% endfor %}
 
+{% assign ncols = pres_coll.formats | size | minus: 1 %}
+
 <table>
   <caption>Presentations available here</caption>
   <tr>
     <th style="text-align: left">Title</th>
     <th style="text-align: left">Thumbnail</th>
-    {% for fmt in pres_coll.formats %}
-      <th style="text-align: right"><code>{{fmt}}</code></th>
+    {% for i in (0..ncols) %}
+      <th style="text-align: right" title="{{pres_coll.format_remarks[i]}}"><code>{{pres_coll.formats[i]}}</code></th>
     {% endfor %}
   </tr>
-
-{% assign ncols = pres_coll.formats | size | minus: 1 %}
 
 {% for pres in site.presentations %}
 
