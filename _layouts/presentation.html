@@ -21,7 +21,7 @@ layout: default
     {% endif %}
 {% endfor %}
 
-{% assign ncols = pres_coll.formats | size %}
+{% assign ncols = pres_coll.formats | size | minus: 1 %}
 
 <table>
   <tr>
