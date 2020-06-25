@@ -4,7 +4,7 @@ In the table below...
 
 * Clicking a size link downloads the data in the indicated format.
 * Clicking a title or image link gives more info about the download.
-* For any `.7z` content see [our guidance](help/7zip.md) for help with it.
+* See [our guidance](help/7zip.md) for help with any `.7z` content.
 
 {% assign pres_coll = 0 %} 
 {% for coll in site.collections %}
@@ -24,7 +24,7 @@ In the table below...
     {% endfor %}
   </tr>
 
-{% assign ncols = pres_coll.formats | size %}
+{% assign ncols = pres_coll.formats | size | minus: 1 %}
 
 {% for pres in site.presentations %}
 

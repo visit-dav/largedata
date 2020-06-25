@@ -4,7 +4,7 @@ In the table below...
 
 * Clicking a size link downloads the data in the indicated format.
 * Clicking a title or image link gives more info about the download.
-* `.7z` is often 2-3x smaller but see [our guidance](help/7zip.md) for help with it.
+* See [our guidance](help/7zip.md) for help with any `.7z` content.
 
 <table>
   <caption>Data archives available here</caption>
