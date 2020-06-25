@@ -13,89 +13,77 @@ layout: default
 
 {{ page.content }}
 
+{% assign darch_coll = 0 %}
+{% for darch in site.collections %}
+    {% if darch.label == "datarchives" %}
+        {% assign darch_coll = darch %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{% assign ncols = darch_coll.formats | size | minus: 1 %}
+
 <table>
   <tr>
     <th colspan="2">Download format options</th>
   </tr>
-  {% if page.nbytes.p7z %}
+  {% for i in (0..ncols) %}
+    {% assign nkbytes = page.nbytes[i] | divided_by: 1000 %}
+    {% assign nMbytes = page.nbytes[i] | divided_by: 1000000 %}
+    {% if nkbytes < 1000 %}
+      {% assign nbytes = nkbytes | append: "KB" %}
+    {% else %}
+      {% assign nbytes = nMbytes | append: "MB" %}
+    {% endif %}
+    <tr>
+      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindocs/{{ page.stem }}{{darch_coll.formats[i]}}?raw=true" title="{{darch_coll.format_remarks[i]}}">{{ page.stem }}{{darch_coll.formats[i]}} ({{nbytes}})</a></code></td>
+    </tr>
+  {% endfor %}
+</table>
+
+<table>
   <tr>
-    <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindata/{{ page.stem }}.7z?raw=true">{{ page.stem }}.7z</a></code></td>
+    <th colspan="2">Download integrity checks</th>
   </tr>
-  {% endif %}
-  {% if page.nbytes.tgz %}
-  <tr>
-    <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindata/{{ page.stem }}.tar.gz?raw=true">{{ page.stem }}.tar.gz</a></code></td>
-  </tr>
-  {% endif %}
-  {% if page.nbytes.zip %}
-  <tr>
-    <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindata/{{ page.stem }}.zip?raw=true">{{ page.stem }}.zip</a></code></td>
-  </tr>
-  {% endif %}
+
   <tr>
     <th>Format</th>
     <th>Size</th>
   </tr>
-  {% if page.nbytes.p7z %}
-  <tr>
-    <td><code>.7z</code></td>
-    <td><code>{{ page.nbytes.p7z }}</code></td>
-  </tr>
-  {% endif %}
-  {% if page.nbytes.tgz %}
-  <tr>
-    <td><code>.tar.gz</code></td>
-    <td><code>{{ page.nbytes.tgz }}</code></td>
-  </tr>
-  {% endif %}
-  {% if page.nbytes.zip %}
-  <tr>
-    <td><code>.zip</code></td>
-    <td><code>{{ page.nbytes.zip }}</code></td>
-  </tr>
-  {% endif %}
+  {% for i in (0..ncols) %}
+    {% assign nkbytes = page.nbytes[i] | divided_by: 1000 %}
+    {% assign nMbytes = page.nbytes[i] | divided_by: 1000000 %}
+    {% if nkbytes < 1000 %}
+      {% assign nbytes = nkbytes | append: "KB" %}
+    {% else %}
+      {% assign nbytes = nMbytes | append: "MB" %}
+    {% endif %}
+    <tr>
+      <td><code>{{darch_coll.formats[i]}}</code></td>
+      <td><code>{{page.nbytes[i]}}({{nbytes}})</code></td>
+    </tr>
+  {% endfor %}
+
   <tr>
     <th>Format</th>
     <th>SHA 256</th>
   </tr>
-  {% if page.nbytes.p7z %}
-  <tr>
-    <td><code>.7z</code></td>
-    <td><code>{{ page.sha256.p7z }}</code></td>
-  </tr>
-  {% endif %}
-  {% if page.nbytes.tgz %}
-  <tr>
-    <td><code>.tar.gz</code></td>
-    <td><code>{{ page.sha256.tgz }}</code></td>
-  </tr>
-  {% endif %}
-  {% if page.nbytes.zip %}
-  <tr>
-    <td><code>.zip</code></td>
-    <td><code>{{ page.sha256.zip }}</code></td>
-  </tr>
-  {% endif %}
+  {% for i in (0..ncols) %}
+    <tr>
+      <td><code>{{darch_coll.formats[i]}}</code></td>
+      <td><code>{{page.sha256[i]}}</code></td>
+    </tr>
+  {% endfor %}
+
   <tr>
     <th>Format</th>
     <th>MD5</th>
   </tr>
-  {% if page.nbytes.p7z %}
-  <tr>
-    <td><code>.7z</code></td>
-    <td><code>{{ page.md5.p7z }}</code></td>
-  </tr>
-  {% endif %}
-  {% if page.nbytes.tgz %}
-  <tr>
-    <td><code>.tar.gz</code></td>
-    <td><code>{{ page.md5.tgz }}</code></td>
-  </tr>
-  {% endif %}
-  {% if page.nbytes.zip %}
-  <tr>
-    <td><code>.zip</code></td>
-    <td><code>{{ page.md5.zip }}</code></td>
-  </tr>
-  {% endif %}
+  {% for i in (0..ncols) %}
+    <tr>
+      <td><code>{{darch_coll.formats[i]}}</code></td>
+      <td><code>{{page.md5[i]}}</code></td>
+    </tr>
+  {% endfor %}
+
 </table>
