@@ -1,7 +1,7 @@
 ---
 layout: presentation
 title: Optimizing Color Application
-stem: samsel_25Jun20_optimizing_color
+stem: LLNL_June_2020sm
 has_image: true
 nbytes:
   - 17434581
