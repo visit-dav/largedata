@@ -7,6 +7,10 @@ The repository is configured to treat files with
 using
 [GitHub's Large File Support](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage).
 
+Currently, there are layouts defined for data archives and presentations. See
+the [section on adding an new file type](#how-to-add-new-collections) if you
+need to expand the kinds of files hosted here. 
+
 Below, we provide instructions for adding binary data archives. Apart from
 perhaps skipping the first step to create and compress an archive file, the
 same procedure can be used to add PowerPoint presentations, movies, etc.
@@ -91,3 +95,57 @@ this, be sure to set the variable `has_image: true` in `foo.md`
    ```
 1. Wait for the site to rebuild. This usually takes less than a few minutes after
 your push.
+
+## How to add new collections
+
+Currently, the repository is configured to handle two kinds of file types,
+data archives and presentations. The steps below outline the process to add
+a new file type.
+
+1. Edit `_config.yml` to define the new *collection*. For example, to add
+a new `gorfos` collection, add a new member to the `collection` member like
+so...
+
+   ```
+   collections:
+     gorfos:
+       output: true
+       formats:
+         - .foo
+         - .bar
+       format_remarks:
+         - "foo is for foobirds."
+         - "bar is for barbees."
+   ```
+
+The `output: true` tells GitHub/Jekyll site generator to *output* an
+`html` file for each *member* of the `gorfo` collection. The `formats`
+member lists the possible file extensions for this class of file.
+The `format_remarks` is short text that will appear as a tool-tip in
+a web browser when a user hovers the mouse over the format options
+on various pages.
+1. Add the file extensions to the `.gitattributes` file like so...
+
+   ```
+   *.foo filter=lfs diff=lfs merge=lfs -text
+   *.bar filter=lfs diff=lfs merge=lfs -text
+   ```
+
+1. Create a *layout* for this new class of file in the `_layouts` directory
+named `gorfo.html`. This layout will define how *landing pages* for instances
+of the *gorfo* class will appear. These *landing pages* capture information
+about a *gorfo* file instance being hosted such as the size in bytes, sha256
+and md5 checksums for various formats. Use the existing layouts as examples
+to see how this is done.
+1. Create a top level directory named `_gorfo`. This is where markdown
+files used to describe each instance of a `gorfo` file will be placed
+along with whatever additional assets they may need like images or
+whatever. For example, if you add a new member to the `gorfo` collection
+named `fred`, there would be a `fred.md` file in the `_gorfo` directory
+that describes information about the file as well as the file sizes
+and integrity checks captured as `front-matter`.
+1. Create a top level directory, such as `bingorfo` where the actual *gorfo*
+files will be stored (as LFS'd content).
+1. Now, you are free to add members to the `_gorfo` directory. Each
+will involve a new `.md` file. See the examples in the `datarchives`
+collection.
