@@ -28,16 +28,6 @@ layout: default
     <th colspan="2">Download format options</th>
   </tr>
   {% for i in (0..ncols) %}
-    <tr>
-      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindocs/{{ page.stem }}{{pres_coll.formats[i]}}?raw=true" title="{{pres_coll.format_remarks[i]}}">{{ page.stem }}{{pres_coll.formats[i]}}</a></code></td>
-    </tr>
-  {% endfor %}
-
-  <tr>
-    <th>Format</th>
-    <th>Size</th>
-  </tr>
-  {% for i in (0..ncols) %}
     {% assign nkbytes = page.nbytes[i] | divided_by: 1000 %}
     {% assign nMbytes = page.nbytes[i] | divided_by: 1000000 %}
     {% if nkbytes < 1000 %}
@@ -46,8 +36,24 @@ layout: default
       {% assign nbytes = nMbytes | append: "MB" %}
     {% endif %}
     <tr>
+      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindocs/{{ page.stem }}{{pres_coll.formats[i]}}?raw=true" title="{{pres_coll.format_remarks[i]}}">{{ page.stem }}{{pres_coll.formats[i]}} ({{nbytes}})</a></code></td>
+    </tr>
+  {% endfor %}
+</table>
+
+<table>
+  <tr>
+    <th colspan="2">Download integrity checks</th>
+  </tr>
+
+  <tr>
+    <th>Format</th>
+    <th>Size</th>
+  </tr>
+  {% for i in (0..ncols) %}
+    <tr>
       <td><code>{{pres_coll.formats[i]}}</code></td>
-      <td><code>{{page.nbytes[i]}} ({{nbytes}})</code></td>
+      <td><code>{{page.nbytes[i]}}</code></td>
     </tr>
   {% endfor %}
 
