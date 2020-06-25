@@ -29,7 +29,7 @@ layout: default
   </tr>
   {% for i in (0..ncols) %}
     <tr>
-      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindocs/{{ page.stem }}{{pres_coll.formats[i]}}?raw=true">{{ page.stem }}{{pres_coll.formats[i]}}</a></code></td>
+      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindocs/{{ page.stem }}{{pres_coll.formats[i]}}?raw=true" title="{{pres_coll.format_remarks[i]}}">{{ page.stem }}{{pres_coll.formats[i]}}</a></code></td>
     </tr>
   {% endfor %}
 

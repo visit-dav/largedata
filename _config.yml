@@ -4,9 +4,21 @@ rawdata_baseurl: https://github.com/visit-dav/largedata/blob/master
 collections:
   datarchives:
     output: true
+    formats:
+      - .p7z
+      - .tar.gz
+      - .zip
+    format_remarks:
+      - "7zip, often 2-3x smaller than others."
+      - "Aka .tgz, tar'd then gzip'd."
+      - "Zip archive, use unzip to expand."
   presentations:
+    output: true
     formats:
       - .opt.pdf
       - .pdf
       - .pptx
-    output: true
+    format_remarks:
+      - "Minimum size PDF. Quality may suffer."
+      - "Standard quality PDF. Not smallest practical."
+      - "Native/original PowerPoint."

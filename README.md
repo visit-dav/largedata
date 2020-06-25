@@ -5,16 +5,10 @@ This [website](https://visit-dav.github.io/largedata/) and the
 is where the VisIt project hosts large files and datasets used in examples,
 tutorials and for other purposes. These files are managed using
 [GitHub's Large File Support (LFS)](https://git-lfs.github.com) but are also
-available to download individually via HTTPs from this website.
-
-For help using or contributing, see these resources...
-
-* [Adding files here](help/adding-download-files.md)
-* [Specifying download links](help/about-download-links.md)
-* [How to upload files to VisIt developers](help/using-for-uploads.md)
-* [Using 7zip](help/7zip.md)
-* [Markdown primer](help/markdown.md) 
-* [Notes about the GH pages theme](help/about-theme.md)
+available to download individually via HTTPs. In addition, this
+[repo](https://github.com/visit-dav/largedata/) can be used to
+[share/upload](help/using-for-uploads.md) large data to VisIt developers.
+For help using this site, see [these notes](help/help.md).
 
 ### Available Collections
 
