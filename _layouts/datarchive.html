@@ -25,8 +25,7 @@ layout: default
 
 <table>
   <tr>
-    <th colspan="2">Download format options</th>
-    <th>Format notes</th>
+    <th>Download options</th>
   </tr>
   {% for i in (0..ncols) %}
     {% assign nkbytes = page.nbytes[i] | divided_by: 1000 %}
@@ -38,14 +37,13 @@ layout: default
     {% endif %}
     <tr>
       <td><code><a href="{{ site.rawdata_baseurl }}/bindata/{{ page.stem }}{{darch_coll.formats[i]}}?raw=true" title="{{darch_coll.format_remarks[i]}}">{{ page.stem }}{{darch_coll.formats[i]}} ({{nbytes}})</a></code></td>
-      <td>{{darch_coll.format_remarks[i]}}</td>
     </tr>
   {% endfor %}
 </table>
 
 <table>
   <tr>
-    <th colspan="2">Download integrity checks</th>
+    <th>Download integrity checks</th>
   </tr>
 
   <tr>
@@ -63,6 +61,7 @@ layout: default
     <tr>
       <td><code>{{darch_coll.formats[i]}}</code></td>
       <td><code>{{page.nbytes[i]}} ({{nbytes}})</code></td>
+      <td>{{darch_coll.format_remarks[i]}}</td>
     </tr>
   {% endfor %}
 
