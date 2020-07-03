@@ -25,7 +25,7 @@ layout: default
 
 <table>
   <tr>
-    <th>Download options</th>
+    <th colspan="2">Download options</th>
   </tr>
   {% for i in (0..ncols) %}
     {% assign nkbytes = page.nbytes[i] | divided_by: 1000 %}
@@ -43,7 +43,7 @@ layout: default
 
 <table>
   <tr>
-    <th>Download integrity checks</th>
+    <th colspan="2">Download integrity checks</th>
   </tr>
 
   <tr>
@@ -60,8 +60,7 @@ layout: default
     {% endif %}
     <tr>
       <td><code>{{darch_coll.formats[i]}}</code></td>
-      <td><code>{{page.nbytes[i]}} ({{nbytes}})</code></td>
-      <td>{{darch_coll.format_remarks[i]}}</td>
+      <td><code>{{page.nbytes[i]}} ({{nbytes}}) {{darch_coll.format_remarks[i]}}</code></td>
     </tr>
   {% endfor %}
 
