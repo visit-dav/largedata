@@ -5,7 +5,7 @@ collections:
   datarchives:
     output: true
     formats:
-      - .p7z
+      - .7z
       - .tar.gz
       - .zip
     format_remarks:
