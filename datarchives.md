@@ -49,7 +49,7 @@ In the table below...
         {% assign nsize = nMsize | append: "MB" %}
     {% endif %}
 
-    <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/{{ pres.stem }}{{darch_coll.formats[i]}}?raw=true" title="Click to download {{darch_coll.formats[i]}} file now">{{ nsize }}</a></td>
+    <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/bindata/{{ pres.stem }}{{darch_coll.formats[i]}}?raw=true" title="Click to download {{darch_coll.formats[i]}} file now">{{ nsize }}</a></td>
     {% endfor %}
 
     </tr>

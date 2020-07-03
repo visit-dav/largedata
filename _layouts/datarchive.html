@@ -36,7 +36,7 @@ layout: default
       {% assign nbytes = nMbytes | append: "MB" %}
     {% endif %}
     <tr>
-      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindocs/{{ page.stem }}{{darch_coll.formats[i]}}?raw=true" title="{{darch_coll.format_remarks[i]}}">{{ page.stem }}{{darch_coll.formats[i]}} ({{nbytes}})</a></code></td>
+      <td colspan="2"><code><a href="{{ site.rawdata_baseurl }}/bindata/{{ page.stem }}{{darch_coll.formats[i]}}?raw=true" title="{{darch_coll.format_remarks[i]}}">{{ page.stem }}{{darch_coll.formats[i]}} ({{nbytes}})</a></code></td>
     </tr>
   {% endfor %}
 </table>
