@@ -11,9 +11,12 @@ Currently, there are layouts defined for data archives and presentations. See
 the [section on adding an new file type](#how-to-add-new-collections) if you
 need to expand the kinds of files hosted here. 
 
-Below, we provide instructions for adding binary data archives. Apart from
-perhaps skipping the first step to create and compress an archive file, the
-same procedure can be used to add PowerPoint presentations, movies, etc.
+### Adding a presentation
+
+[Below](#adding-a-data-archive), we provide instructions for adding binary
+data archives. Apart from perhaps skipping the first step to create and
+compress an archive file, the same procedure can be used to add presentations,
+movies, etc.
 
 ### Adding a data archive
 
@@ -96,7 +99,7 @@ this, be sure to set the variable `has_image: true` in `foo.md`
 1. Wait for the site to rebuild. This usually takes less than a few minutes after
 your push.
 
-## How to add new collections
+## Adding a whole new *collection*
 
 Currently, the repository is configured to handle two kinds of file types,
 data archives and presentations. The steps below outline the process to add
