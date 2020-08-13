@@ -1,6 +1,6 @@
 ---
 layout: presentation
-title: "Ascent: Flyweight In Situ Visualization and Analysis for HPC Simulations"
+title: CAES 2020 Ascent Intro
 stem: 2020_08_12_CAES_Ascent_Intro
 nbytes:
   - 859309

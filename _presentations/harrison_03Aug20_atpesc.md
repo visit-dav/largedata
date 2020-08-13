@@ -1,6 +1,6 @@
 ---
 layout: presentation
-title: Visualization and Analysis of HPC Simulation Data with VisIt
+title: ATPESC 2020 VisIt Tutorial
 stem: 2020_08_03_ATPESC20_VisIt_Tutorial_Intro
 nbytes:
   - 5256789

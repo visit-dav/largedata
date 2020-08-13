@@ -1,6 +1,6 @@
 ---
 layout: presentation
-title: Visualization and Analysis of HPC Simulation Data with VisIt
+title: CAES 2020 VisIt Intro
 stem: 2020_08_12_CAES_VisIt_Intro
 nbytes:
   - 5256844
