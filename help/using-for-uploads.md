@@ -24,7 +24,7 @@ tool such as `tar`, `zip`, `7z`, etc.
     attach *any* format by simply faking and adding the `.gz` extension.
     To avoid confusion with a *real* gzip compressed file, also add an
     obvious intermediate extension such as `foo_data.7z.fake.gz`.
-* LLNL Anonymous FTP server, ftp://ftp.llnl.gov
+* [LLNL Anonymous FTP server](https://computing.llnl.gov/tutorials/dataheroes/lc_resources/anonymousFTPinstructions.pdf), ftp://ftp.llnl.gov
   * Works only to get data to those VisIt developers who have LLNL accounts.
   * Size limit depends on aggregate usage by all uploads there but probably < 1GB.
   * It is not possible to use a web browser to upload data to ftp://ftp.llnl.gov
@@ -74,10 +74,11 @@ tool such as `tar`, `zip`, `7z`, etc.
     **Note:** the command above also demonstrates the creation of a new directory in the
     ftp server's `incoming` directory using curl. We currently know of no way to use `wget` to
     in the same way.
-  * You may also be able to use LLNL's [hopper](https://hpc.llnl.gov/software/data-management-tools/hopper)
-    tool.
-  * Email VisIt developers with the name(s) of the files you uploaded there
-    so they know to go get them.
+  * Email VisIt developers with the *full* URL name(s) of the files you uploaded there
+    so they know to go get them. For example...
+    ```
+    ftp://ftp.llnl.gov/incoming/foo/bar.tar.gz
+    ```
   * Files uploaded there are readable only from LLNL firewalled networks and are
     purged regularly.
 * Submit a PR from a [fork of this repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
