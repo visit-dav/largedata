@@ -35,9 +35,11 @@ layout: default
     {% else %}
       {% assign nbytes = nMbytes | append: "MB" %}
     {% endif %}
-    <tr>
-      <td><code><a href="{{ site.rawdata_baseurl }}/bindata/{{ page.stem }}{{darch_coll.formats[i]}}?raw=true" title="{{darch_coll.format_remarks[i]}}">{{ page.stem }}{{darch_coll.formats[i]}} ({{nbytes}})</a></code></td>
-    </tr>
+    {% if page.nbytes[i] > 0 %}
+      <tr>
+        <td><code><a href="{{ site.rawdata_baseurl }}/bindata/{{ page.stem }}{{darch_coll.formats[i]}}?raw=true" title="{{darch_coll.format_remarks[i]}}">{{ page.stem }}{{darch_coll.formats[i]}} ({{nbytes}})</a></code></td>
+      </tr>
+    {% endif %}
   {% endfor %}
 </table>
 
@@ -58,10 +60,12 @@ layout: default
     {% else %}
       {% assign nbytes = nMbytes | append: "MB" %}
     {% endif %}
-    <tr>
-      <td><code>{{darch_coll.formats[i]}}</code></td>
-      <td><code>{{page.nbytes[i]}} ({{nbytes}}) </code><font style="font-size:1vw;">{{darch_coll.format_remarks[i]}}</font></td>
-    </tr>
+    {% if page.nbytes[i] > 0 %}
+      <tr>
+        <td><code>{{darch_coll.formats[i]}}</code></td>
+        <td><code>{{page.nbytes[i]}} ({{nbytes}}) </code><font style="font-size:1vw;">{{darch_coll.format_remarks[i]}}</font></td>
+      </tr>
+    {% endif %}
   {% endfor %}
 
   <tr>
@@ -69,10 +73,12 @@ layout: default
     <th>SHA 256</th>
   </tr>
   {% for i in (0..ncols) %}
-    <tr>
-      <td><code>{{darch_coll.formats[i]}}</code></td>
-      <td><code>{{page.sha256[i]}}</code></td>
-    </tr>
+    {% if page.nbytes[i] > 0 %}
+      <tr>
+        <td><code>{{darch_coll.formats[i]}}</code></td>
+        <td><code>{{page.sha256[i]}}</code></td>
+      </tr>
+    {% endif %}
   {% endfor %}
 
   <tr>
@@ -80,10 +86,12 @@ layout: default
     <th>MD5</th>
   </tr>
   {% for i in (0..ncols) %}
-    <tr>
-      <td><code>{{darch_coll.formats[i]}}</code></td>
-      <td><code>{{page.md5[i]}}</code></td>
-    </tr>
+    {% if page.nbytes[i] > 0 %}
+      <tr>
+        <td><code>{{darch_coll.formats[i]}}</code></td>
+        <td><code>{{page.md5[i]}}</code></td>
+      </tr>
+    {% endif %}
   {% endfor %}
 
 </table>

@@ -2,6 +2,7 @@
 layout: presentation
 title: CAES 2020 Ascent Intro
 stem: 2020_08_12_CAES_Ascent_Intro
+has_image: true
 nbytes:
   - 859309
   - 13919096

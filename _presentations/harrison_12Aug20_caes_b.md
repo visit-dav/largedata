@@ -2,6 +2,7 @@
 layout: presentation
 title: CAES 2020 VisIt Intro
 stem: 2020_08_12_CAES_VisIt_Intro
+has_image: true
 nbytes:
   - 5256844
   - 45964299
