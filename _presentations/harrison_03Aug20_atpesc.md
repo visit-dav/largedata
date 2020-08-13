@@ -2,6 +2,7 @@
 layout: presentation
 title: ATPESC 2020 VisIt Tutorial
 stem: 2020_08_03_ATPESC20_VisIt_Tutorial_Intro
+has_image: true
 nbytes:
   - 5256789
   - 46056520
