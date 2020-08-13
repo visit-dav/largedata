@@ -5,6 +5,9 @@ the options available depend on the size of the files. In all of
 the scenarios below, compression can help mitgate size limits.
 If you have easy access to [7zip](7zip.md) compression tools, it
 can often yield the best compression by sometimes a factor of 2-3x.
+In addition, to simplify handling of potentially many files, it is
+best to use an [*archiver*](https://en.wikipedia.org/wiki/File_archiver)
+tool such as `tar`, `zip`, `7z`, etc.
 
 * Email
   * Works ok for small files, less than 5-10MB. The actual size limit
@@ -21,12 +24,58 @@ can often yield the best compression by sometimes a factor of 2-3x.
     attach *any* format by simply faking and adding the `.gz` extension.
     To avoid confusion with a *real* gzip compressed file, also add an
     obvious intermediate extension such as `foo_data.7z.fake.gz`.
-* [LLNL Anonymous FTP server](ftp://ftp.llnl.gov/incoming)
-  * Works only to get data to VisIt developers with LLNL accounts.
+* LLNL Anonymous FTP server, ftp://ftp.llnl.gov
+  * Works only to get data to those VisIt developers who have LLNL accounts.
   * Size limit depends on aggregate usage by all uploads there but probably < 1GB.
-  * On Windows and linux, open a browser to the above link and drag and drop
-    your files there. On OSX, from Finder select `Go->Connect to server` and enter
-    `ftp://ftp.llnl.gov/incoming` and then drag and drop your files there.
+  * It is not possible to use a web browser to upload data to ftp://ftp.llnl.gov
+    from outside LLNL firewalls. Only command-line FTP tools that do not
+    attempt to show directory listings will work.
+  * Uploaders need to upload their files to the `incoming` directory on the server.
+    * **Note:** VisIt developers may also *download* data to users via the `outgoing`
+      directory.
+  * Whether uploading or downloading data via ftp.llnl.gov, everyone needs to know
+    the full URLs of the associated files in order to access them.
+  * Using the standard ftp command-line tool...
+    ```
+    % ftp ftp.llnl.gov
+    % Connected to ftp.llnl.gov.
+    220-        **WARNING**WARNING**WARNING**WARNING**WARNING**
+    220-        
+    220- This is a Department of Energy (DOE) computer system. DOE
+    .
+    .
+    .
+    Name (ftp.llnl.gov:miller86): anonymous
+    331 Please specify email address as password.
+    Password:
+    230 Login successful.
+    Remote system type is UNIX.
+    Using binary mode to transfer files.
+    Unknown command.
+    ftp> bin # Switch data mode to binary when sending binary (e.g. not ascii) files
+    200 Switching to Binary mode.
+    ftp> cd incoming
+    ftp> put foo.tar.gz miller86-upload-1.tar.gz # be sure to create a likely unique file name on the server
+    local: foo.tar.gz remote: miller86-upload-1.tar.gz
+    500 Unknown command.
+    ALLO64 83 - command not accepted - Reverting to ALLO command
+    200 The filesize has been allocated.
+    200 PORT command successful. Consider using PASV.
+    150 Ok to send data.
+    226 Transfer complete.
+    443 bytes sent in 0.0075 seconds (0.011 MBytes/sec)
+    ftp> ctrl-D
+    ftp> 221 Goodbye.
+    ```
+  * Using `curl`
+    ```
+    curl -T foo.tar.gz --ftp-create-dirs ftp://ftp.llnl.gov/incoming/miller86/upload-1.tar.gz
+    ```
+    **Note:** the command above also demonstrates the creation of a new directory in the
+    ftp server's `incoming` directory using curl. We currently know of no way to use `wget` to
+    in the same way.
+  * You may also be able to use LLNL's [hopper](https://hpc.llnl.gov/software/data-management-tools/hopper)
+    tool.
   * Email VisIt developers with the name(s) of the files you uploaded there
     so they know to go get them.
   * Files uploaded there are readable only from LLNL firewalled networks and are
