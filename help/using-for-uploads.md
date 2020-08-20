@@ -45,7 +45,7 @@ tool such as `tar`, `zip`, `7z`, etc.
     .
     .
     .
-    Name (ftp.llnl.gov:miller86): anonymous
+    Name (ftp.llnl.gov:<someuser>): anonymous
     331 Please specify email address as password.
     Password:
     230 Login successful.
@@ -55,8 +55,8 @@ tool such as `tar`, `zip`, `7z`, etc.
     ftp> bin # Switch data mode to binary when sending binary (e.g. not ascii) files
     200 Switching to Binary mode.
     ftp> cd incoming
-    ftp> put foo.tar.gz miller86-upload-1.tar.gz # be sure to create a likely unique file name on the server
-    local: foo.tar.gz remote: miller86-upload-1.tar.gz
+    ftp> put foo.tar.gz someuser-upload-1.tar.gz # be sure to create a likely unique file name on the server
+    local: foo.tar.gz remote: someuser-upload-1.tar.gz
     500 Unknown command.
     ALLO64 83 - command not accepted - Reverting to ALLO command
     200 The filesize has been allocated.
@@ -69,7 +69,7 @@ tool such as `tar`, `zip`, `7z`, etc.
     ```
   * Using `curl`
     ```
-    curl -T foo.tar.gz --ftp-create-dirs ftp://ftp.llnl.gov/incoming/miller86/upload-1.tar.gz
+    curl -T foo.tar.gz --ftp-create-dirs ftp://ftp.llnl.gov/incoming/someuser/upload-1.tar.gz
     ```
     **Note:** the command above also demonstrates the creation of a new directory in the
     ftp server's `incoming` directory using curl. We currently know of no way to use `wget` to
@@ -77,7 +77,7 @@ tool such as `tar`, `zip`, `7z`, etc.
   * Email VisIt developers with the *full* URL name(s) of the files you uploaded there
     so they know to go get them. For example...
     ```
-    ftp://ftp.llnl.gov/incoming/foo/bar.tar.gz
+    ftp://ftp.llnl.gov/incoming/someuser/upload-1.tar.gz
     ```
   * Files uploaded there are readable only from LLNL firewalled networks and are
     purged regularly.
