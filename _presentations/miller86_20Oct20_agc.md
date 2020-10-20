@@ -3,7 +3,6 @@ layout: presentation
 title: When 100 Flops/Watt was a Giant Leap
 stem: miller86_20Oct20_agc
 has_image: true
-
 nbytes:
   - 0
   - 0
@@ -16,7 +15,6 @@ sha256:
   - 0000000000000000000000000000000000000000000000000000000000000000
   - 0000000000000000000000000000000000000000000000000000000000000000
   - 29910ea0ac517246910e4203b68136fe40a195ba97ab468a3940bc49e24ea583
-
 ---
 These are the slides presented by
 [Mark C. Miller](https://github.com/markcmiller86) for a talk titled
