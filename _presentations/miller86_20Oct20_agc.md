@@ -1,6 +1,6 @@
 ---
 layout: presentation
-title: When 100 Flops/Watt was a Giant Leap
+title: "When 100 Flops/Watt was a Giant Leap"
 stem: miller86_20Oct20_agc
 has_image: true
 nbytes:
