@@ -33,3 +33,6 @@ the guidance software it executed as well as the pioneering efforts in developin
 In addition, we'll discuss and compare to the present day some of the historical social
 context of the 1960's era in which this work took place. Time permitting, the talk will
 conclude with several stories about actual user experiences with the AGC in Apollo missions.
+
+**Note:** The PowerPoint slides use too many animations for any PDF versions of the slides
+to be worthwhile. So, only an *optimized* PowerPoint version is made available here.
