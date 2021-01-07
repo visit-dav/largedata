@@ -24,7 +24,7 @@ tool such as `tar`, `zip`, `7z`, etc.
     attach *any* format by simply faking and adding the `.gz` extension.
     To avoid confusion with a *real* gzip compressed file, also add an
     obvious intermediate extension such as `foo_data.7z.fake.gz`.
-* [LLNL Anonymous FTP server](https://computing.llnl.gov/tutorials/dataheroes/lc_resources/anonymousFTPinstructions.pdf), ftp://ftp.llnl.gov
+* [LLNL Anonymous FTP server](https://hpc.llnl.gov/sites/default/files/anonymousFTPinstructions.pdf), ftp://ftp.llnl.gov
   * Works only to get data to those VisIt developers who have LLNL accounts.
   * Size limit depends on aggregate usage by all uploads there but probably < 1GB.
   * It is not possible to use a web browser to upload data to ftp://ftp.llnl.gov
