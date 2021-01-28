@@ -9,11 +9,18 @@ In addition, to simplify handling of potentially many files, it is
 best to use an [*archiver*](https://en.wikipedia.org/wiki/File_archiver)
 tool such as `tar`, `zip`, `7z`, etc.
 
-* Email
-  * Works ok for small files, less than 5-10MB. The actual size limit
+* Email to visit-users list
+  * Limited to 512Kb. Use compression (gzip or 7z) when possible.
+  * Our cyber-filtering can often remove file attachments with certain extensions.
+    If this is an issue, try adding a funky file extension like (e.g. attach
+    `foo.tar.gz.gorfo` instead of `foo.tar.gz`)
+* Email to an individual developer
+  * Works ok for smallish files, less than 5-10MB. The actual size limit
     depends on several factors which are likely outside the knowledge 
     of sender and recipeint.
-  * Cyber-filtering can often remove certain types of file attachments.
+  * Our cyber-filtering can often remove file attachments with certain extensions.
+    If this is an issue, try adding a funky file extension like (e.g. attach
+    `foo.tar.gz.gorfo` instead of `foo.tar.gz`)
 * Attachments to [SRE issue](https://github.com/visit-dav/live-customer-response/issues) comments
   * Only a handful of specific file extensions are supported.
   * Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.
