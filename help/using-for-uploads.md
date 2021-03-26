@@ -10,33 +10,34 @@ best to use an [*archiver*](https://en.wikipedia.org/wiki/File_archiver)
 tool such as `tar`, `zip`, `7z`, etc.
 
 * Email to visit-users list
-  * Limited to 512Kb. Use compression (gzip or 7z) when possible.
-  * Our cyber-filtering can often remove file attachments with certain extensions.
-    If this is an issue, try adding a funky file extension like (e.g. attach
-    `foo.tar.gz.gorfo` instead of `foo.tar.gz`)
+  * **Size Limit: 512 kB**
+  * Use compression (gzip or 7z) when possible.
+  * Our cyber-filtering will remove file attachments with certain extensions.
+  If this is an issue, try adding a funky file extension like `.gorfo`
+  (e.g. name your attachment `foo.tar.gz.gorfo` instead of `foo.tar.gz`).
 * Email to an individual developer
-  * Works ok for smallish files, less than 5-10MB. The actual size limit
-    depends on several factors which are likely outside the knowledge 
-    of sender and recipeint.
-  * Our cyber-filtering can often remove file attachments with certain extensions.
-    If this is an issue, try adding a funky file extension like (e.g. attach
-    `foo.tar.gz.gorfo` instead of `foo.tar.gz`)
+  * **Size Limit: 5-10 MB**
+  * The actual size limit depends on several factors which are likely outside
+    the knowledge of sender and recipeint.
+  * Our cyber-filtering will remove file attachments with certain extensions.
+  If this is an issue, try adding a funky file extension like `.gorfo`
+  (e.g. name your attachment `foo.tar.gz.gorfo` instead of `foo.tar.gz`).
 * Attachments to [SRE issue](https://github.com/visit-dav/live-customer-response/issues) comments
-  * Only a handful of specific file extensions are supported.
-  * Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.
-  * Raw text files (`.txt`, and `.log`) < 25MB.
-  * Document files (`.pdf`, `.docx`, `.pptx`, and `.xlsx`) < 25MB.
-  * Compressed files (`.gz`, `.zip`) < 25MB.
-  * Because GitHub currently keys off *only* the file's extension, you can
-    attach *any* format by simply faking and adding the `.gz` extension.
-    To avoid confusion with a *real* gzip compressed file, also add an
-    obvious intermediate extension such as `foo_data.7z.fake.gz`.
+  * Only certain file extensions are supported.
+  * **Size Limits:**
+    * **Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.**
+    * **Raw text files (`.txt`, and `.log`) < 25MB.**
+    * **Document files (`.pdf`, `.docx`, `.pptx`, and `.xlsx`) < 25MB.**
+    * **Compressed files (`.gz`, `.zip`) < 25MB.**
+  * Because GitHub currently keys off only the file's extension, you can
+  attach any format by simply lying about the extension. For example, to
+  attach `foo.obj` just rename it to `foo.obj.not.gz`. Or, better yet, just
+  compress `foo.obj` with gzip to produce `foo.obj.gz`.
 * [LLNL Anonymous FTP server](https://hpc.llnl.gov/sites/default/files/anonymousFTPinstructions.pdf), ftp://ftp.llnl.gov
-  * Works only to get data to those VisIt developers who have LLNL accounts.
-  * Size limit depends on aggregate usage by all uploads there but probably < 1GB.
-  * It is not possible to use a web browser to upload data to ftp://ftp.llnl.gov
-    from outside LLNL firewalls. Only command-line FTP tools that do not
-    attempt to show directory listings will work.
+  * **Size limit:  probably < 1GB**
+  * Works only to get data to VisIt developers with LLNL accounts.
+  * It is not possible to use a web browser to upload data to ftp://ftp.llnl.gov.
+    Only command-line FTP tools that do not attempt to show directory listings will work.
   * Uploaders need to upload their files to the `incoming` directory on the server.
     * **Note:** VisIt developers may also *download* data to users via the `outgoing`
       directory.
@@ -89,8 +90,8 @@ tool such as `tar`, `zip`, `7z`, etc.
   * Files uploaded there are readable only from LLNL firewalled networks and are
     purged regularly.
 * Submit a PR from a [fork of this repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+  * [**Size limit: < 2GB**](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage)
   * Works for *any* VisIt developer
-  * [Size limit is < 2GB](https://help.github.com/en/github/managing-large-files/about-git-large-file-storage)
   * See below for detailed instructions.
 
 ### Sending data via a Pull Request
