@@ -16,7 +16,7 @@ tool such as `tar`, `zip`, `7z`, etc.
   * Our cyber-filtering will remove file attachments with certain extensions.
   If this is an issue, try adding a funky file extension like `.gorfo`
   (e.g. name your attachment `foo.tar.gz.gorfo` instead of `foo.tar.gz`).
-* Attachments to [SRE issue](https://github.com/visit-dav/live-customer-response/issues) comments
+* Attachments to [Discussions](https://github.com/visit-dav/visit/discussions)
   * Only certain file extensions are supported.
   * **Size Limits:**
     * **Image files (`.gif`., `.png`, `.jpeg` and `.jpg`) < 10MB.**
@@ -24,7 +24,7 @@ tool such as `tar`, `zip`, `7z`, etc.
     * **Document files (`.pdf`, `.docx`, `.pptx`, and `.xlsx`) < 25MB.**
     * **Compressed files (`.gz`, `.zip`) < 25MB.**
   * Because GitHub currently keys off only the file's extension, you can
-  attach any format by simply lying about the extension. For example, to
+  attach any format by simply spoofing the extension. For example, to
   attach `foo.obj` just rename it to `foo.obj.not.gz`. Or, better yet, just
   compress `foo.obj` with gzip to produce `foo.obj.gz`.
 * [LLNL Anonymous FTP server](https://hpc.llnl.gov/sites/default/files/anonymousFTPinstructions.pdf), ftp://ftp.llnl.gov
