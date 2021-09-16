@@ -2,6 +2,7 @@
 layout: datarchive
 title: VisIt Data Files
 stem: visit_data_files
+has_image: true
 nbytes:
   - 8818221
   - 28471729
