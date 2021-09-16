@@ -9,12 +9,6 @@ In addition, to simplify handling of potentially many files, it is
 best to use an [*archiver*](https://en.wikipedia.org/wiki/File_archiver)
 tool such as `tar`, `zip`, `7z`, etc.
 
-* Email to visit-users list
-  * **Size Limit: 512 kB**
-  * Use compression (gzip or 7z) when possible.
-  * Our cyber-filtering will remove file attachments with certain extensions.
-  If this is an issue, try adding a funky file extension like `.gorfo`
-  (e.g. name your attachment `foo.tar.gz.gorfo` instead of `foo.tar.gz`).
 * Email to an individual developer
   * **Size Limit: 5-10 MB**
   * The actual size limit depends on several factors which are likely outside
