@@ -1,9 +1,8 @@
 ---
 layout: presentation
-title: 55 Years in HPC: One Woman’s Experiences and Perspectives
+title: "55 Years in HPC: One Woman’s Experiences and Perspectives"
 stem: jean_shuler_hpc_webinar_opt
 has_image: true
-
 nbytes:
   - 0
   - 10873711
