@@ -18,7 +18,7 @@ sha256:
 ---
 These are the slides used for an [HPC Webinar](https://www.exascaleproject.org/event/55plus-years-in-hpc/) in conversation with Jean Shuler and her 55+ years of experience in HPC.
 
-This HPC webinar will differ from others in the series. We will have a Q&A session with Jean Shuler, a woman who has worked at the leading edge of High-Performance Computing for more than 55 years.
+We will have a Q&A session with Jean Shuler, a woman who has worked at the leading edge of High-Performance Computing for more than 55 years.
 Jean graduated with a degree in Mathematics from William and Mary in 1963 and taught herself programming on the job at NASA Langley.
 By 1972, she came to LLNL where she has worked ever since.
 She initially worked on early data storage and graphics systems.
