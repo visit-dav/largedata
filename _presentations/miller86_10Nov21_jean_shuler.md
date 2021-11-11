@@ -26,3 +26,5 @@ She eventually led User Services for the National Energy Research Scientific Com
 This role took Jean all over the world contributing to Cray User Group meetings.
 When NERSC moved from LLNL in 1996, Jean created and led the User Services Group for Livermore Computing.
 Throughout her career, Jean has supported various HPC systems from CDC, Cray, Meiko, and IBM on the march to Exascale.
+
+A [video recording](https://youtu.be/SvWG4dVjj8o) is also available.
