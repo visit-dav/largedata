@@ -7,7 +7,6 @@ In the table below...
 
 * Clicking a size link downloads the data in the indicated format.
 * Clicking a title or image link gives more info about the download.
-* See [our guidance](help/7zip.md) for help with any `.7z` content.
 
 {% assign pres_coll = 0 %} 
 {% for coll in site.collections %}
