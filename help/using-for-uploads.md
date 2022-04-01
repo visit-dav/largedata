@@ -1,13 +1,13 @@
+---
+layout: default
+---
 ## Options for uploading large files
 
 If a user needs to get data to VisIt developers for any reason,
 the options available depend on the size of the files. In all of
 the scenarios below, compression can help mitgate size limits.
-If you have easy access to [7zip](7zip.md) compression tools, it
-can often yield the best compression by sometimes a factor of 2-3x.
-In addition, to simplify handling of potentially many files, it is
 best to use an [*archiver*](https://en.wikipedia.org/wiki/File_archiver)
-tool such as `tar`, `zip`, `7z`, etc.
+tool such as `tar`, `zip`, etc.
 
 * Email to an individual developer
   * **Size Limit: 5-10 MB**

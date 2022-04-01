@@ -1,3 +1,6 @@
+---
+layout: default
+---
 ## How to add files
 
 This repository can be used to host many kinds of large files including
@@ -27,20 +30,18 @@ the same name as the archive file name without the extension. For example, all
 files in the `foo_data.tar.gz` file would expand into a directory named `foo_data.`
 
 1. It is not a *requirement* but please try to create all download format options,
-`.7z`, `.tar.gz` and `.zip` whenever possible. If you provide only one option, `.tar.gz`
+`.tar.xz`, `.tar.gz` and `.zip` whenever possible. If you provide only one option, `.tar.gz`
 is probably the best because all platforms have ubiquitous tools to process that
 format. The advantages of the various formats are...
-   * `.7z` ([7-zip.org](https://www.7-zip.org/download.html))
+   * `.tar.xz`
      * Usually the smallest files by 2-3x.
-     * Tools are available for [Windows](https://www.7-zip.org/download.html),
-       [Mac](https://apps.apple.com/us/app/the-unarchiver/id425424353) and
-       [Linux](https://www.7-zip.org/download.html).
-     * Tools are not often *pre-built* on most systems so users wind up
+     * Tools are not *pre-built* on all systems so users may wind up
        having to download and install them prior to use.
-     * A command to produce a `7z` compressed data file...
+     * A command to produce a maximally compressed `.tar.xz` data file using
+       4 threads...
 
    ```
-   7z a -y -m0=lzma2 -mx=9 foo_data.7z foo_data
+   tar cvf - foo_dir | xz -9e -T4 - > foo_dir.tar.xz
    ```
    * `.tar.gz` (aka `.tgz`, [tarball](https://en.wikipedia.org/wiki/Tar_(computing)))
      * Most commonly used on Linux/Unix systems.
@@ -65,7 +66,7 @@ to be simultaneously revised by multiple developers or to be changing on a frequ
 it is perfectly fine to do all the work here directly on the `master` branch.
    ```
    git pull
-   git add bindata/foo_data.7z
+   git add bindata/foo_data.tar.xz
    git add bindata/foo_data.tar.gz
    git add bindata/foo_data.zip
    git commit -a -m 'adding foo data'

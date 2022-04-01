@@ -1,3 +1,6 @@
+---
+layout: default
+---
 ## How This Site Uses Jekyll
 
 This repo is using GitHub's *builtin* [minimal](https://pages-themes.github.io/minimal/)

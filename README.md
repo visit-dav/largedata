@@ -1,3 +1,6 @@
+---
+layout: default
+---
 ## Welcome to VisIt Large File Shares
 
 This [website](https://visit-dav.github.io/largedata/) and the

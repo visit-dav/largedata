@@ -1,3 +1,6 @@
+---
+layout: default
+---
 ## About Download Links
 
 Once files have been [added](adding-download-files.md) to this repository,
@@ -48,4 +51,4 @@ markdown file hosting information about the data is *without* the extension.
 
 The landing page link takes users to a page with more information about the file
 including maybe images as well as all the download format options
-(e.g. `.7z`, `.tar.gz`, `.zip`, etc.) and their integrity checks.
+(e.g. `.tar.xz`, `.tar.gz`, `.zip`, etc.) and their integrity checks.

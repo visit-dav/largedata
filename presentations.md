@@ -1,3 +1,6 @@
+---
+layout: default
+---
 ## Presentations Collection
 
 In the table below...

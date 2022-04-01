@@ -1,6 +1,6 @@
 #!/usr/bin/env python3 -u
 
-import hashlib, os, shutil, sys, tarfile, zipfile
+import hashlib, os, re, shutil, sys, tarfile, zipfile
 from optparse import OptionParser
 
 # run ./add_dataset.py --help for documentation
@@ -122,7 +122,7 @@ def create_thumbnail(imfile):
 #
 def create_md_landing_page(vopts, gzcks, xzcks, zpcks):
 
-    with open('../_datarchives/%s.md'%vopts['title'],'w') as mdfile:
+    with open('../_datarchives/%s.md'%archive_stem(vopts['title']),'w') as mdfile:
         mdfile.write('---\n')
         mdfile.write('layout: datarchive\n')
         mdfile.write('title: %s\n'%vopts['title'])

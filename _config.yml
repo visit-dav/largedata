@@ -5,13 +5,13 @@ collections:
   datarchives:
     output: true
     formats:
-      - .7z
+      - .tar.xz
       - .tar.gz
       - .zip
     format_remarks:
-      - "7zip, often 2-3x smaller than others."
-      - "Aka .tgz, tar'd then gzip'd."
-      - "Zip archive, use unzip to expand."
+      - "lzma2 tar archive, ~2-3x < gzip."
+      - "gzip tar archive (aka .tgz)."
+      - "deflate zip archive."
   presentations:
     output: true
     formats:
@@ -20,5 +20,5 @@ collections:
       - .pptx
     format_remarks:
       - "Minimum size PDF. Quality may suffer."
-      - "Standard quality PDF. Not smallest practical."
+      - "Standard quality PDF. Not smallest possible."
       - "Native/orig. maybe very large PowerPoint."
