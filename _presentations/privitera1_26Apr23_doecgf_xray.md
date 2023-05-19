@@ -18,5 +18,5 @@ sha256:
 ---
 These are the slides presented by
 [Justin Privitera](https://github.com/JustinPrivitera) for the
-[DoE Computer Graphics Forum](https://www.doecgf.org/) held at 
+[DOE Computer Graphics Forum](https://www.doecgf.org/) held at 
 [INL in April 2023](https://caes.org/event/doecgf-2023/).
