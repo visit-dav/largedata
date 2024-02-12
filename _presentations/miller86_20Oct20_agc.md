@@ -34,7 +34,7 @@ In addition, we'll discuss and compare to the present day some of the historical
 context of the 1960's era in which this work took place. Time permitting, the talk will
 conclude with several stories about actual user experiences with the AGC in Apollo missions.
 
-A couple of different videos are available: [IDEAS-ECP Webinar](https://youtu.be/zTEu5Tvl7OM?si=-AD1QnJuKkicbdOx) and [2019 ATPESC Dinner Talk](https://youtu.be/QwUS99qjz34?si=-szzZASo6DaZUMBx).
+A couple of different videos are available: [ATPESC Dinner Talk](https://youtu.be/zTEu5Tvl7OM?si=-AD1QnJuKkicbdOx) and [IDEAS-ECP Webinar](https://youtu.be/QwUS99qjz34?si=-szzZASo6DaZUMBx).
 
 **Note:** The PowerPoint slides use too many animations for any PDF versions of the slides
 to be worthwhile. So, only an *optimized* PowerPoint version is made available here.
