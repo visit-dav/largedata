@@ -4,8 +4,10 @@ title: ATPESC 2024 VisIt Tutorial
 stem: 2024_08_05_ATPESC_VisIt_Intro
 has_image: true
 nbytes:
+  - 0
   - 13405268
 sha256:
+  - 0
   - 5885227cc10b1891f221263fd974f3cde3ade650e999b5cb4cf9e0a5e947c08b
 ---
 These are the slides presented by

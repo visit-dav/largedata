@@ -4,8 +4,10 @@ title: ATPESC 2024 Ascent Tutorial
 stem: 2024_08_05_ATPESC_Ascent_Intro
 has_image: true
 nbytes:
+  - 0
   - 9728778
 sha256:
+  - 0
   - 4c62fa350f4619210c61afe8f479f838cfeb015a9e992790f7ae268a08ed9bbd
 ---
 These are the slides presented by
