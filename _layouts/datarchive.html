@@ -81,17 +81,4 @@ layout: default
     {% endif %}
   {% endfor %}
 
-  <tr>
-    <th>Format</th>
-    <th>MD5</th>
-  </tr>
-  {% for i in (0..ncols) %}
-    {% if page.nbytes[i] > 0 %}
-      <tr>
-        <td><code>{{darch_coll.formats[i]}}</code></td>
-        <td><code>{{page.md5[i]}}</code></td>
-      </tr>
-    {% endif %}
-  {% endfor %}
-
 </table>

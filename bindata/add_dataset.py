@@ -45,7 +45,7 @@ def parse_args():
     opts, files = parser.parse_args()
     return opts, files
 
-def generate_file_cksum(filename, hashmode=hashlib.md5(), blocksize=2**20):
+def generate_file_cksum(filename, hashmode=hashlib.sha256(), blocksize=2**20):
     with open(filename, "rb" ) as f:
         while True:
             buf = f.read(blocksize)
@@ -73,9 +73,8 @@ def create_tar_gz_archive(title, files):
             tf.add(f)
         print('done')
     size = os.path.getsize(aname)
-    md5 = generate_file_cksum(aname)
     sha256 = generate_file_cksum(aname, hashlib.sha256())
-    return size, md5, sha256
+    return size, sha256
     
 def create_tar_xz_archive(title, files):
     aname = archive_stem(title)+'.tar.xz'
@@ -86,9 +85,8 @@ def create_tar_xz_archive(title, files):
             tf.add(f)
         print('done')
     size = os.path.getsize(aname)
-    md5 = generate_file_cksum(aname)
     sha256 = generate_file_cksum(aname, hashlib.sha256())
-    return size, md5, sha256
+    return size, sha256
 
 def create_zip_archive(title, entries):
     aname = archive_stem(title)+'.zip'
@@ -104,9 +102,8 @@ def create_zip_archive(title, entries):
                 zf.write(e)
         print('done')
     size = os.path.getsize(aname)
-    md5 = generate_file_cksum(aname)
     sha256 = generate_file_cksum(aname, hashlib.sha256())
-    return size, md5, sha256
+    return size, sha256
 
 
 def create_thumbnail(imfile):
@@ -133,10 +130,6 @@ def create_md_landing_page(vopts, gzcks, xzcks, zpcks):
         mdfile.write('  - %d\n'%int(xzcks[0]))
         mdfile.write('  - %d\n'%int(gzcks[0]))
         mdfile.write('  - %d\n'%int(zpcks[0]))
-        mdfile.write('md5:\n')
-        mdfile.write('  - %s\n'%xzcks[1])
-        mdfile.write('  - %s\n'%gzcks[1])
-        mdfile.write('  - %s\n'%zpcks[1])
         mdfile.write('sha256:\n')
         mdfile.write('  - %s\n'%xzcks[2])
         mdfile.write('  - %s\n'%gzcks[2])
