@@ -2,7 +2,6 @@
 layout: presentation
 title: ATPESC 2024 Ascent Tutorial
 stem: 2024_08_05_ATPESC_Ascent_Intro
-has_image: true
 nbytes:
   - 0
   - 9728778

@@ -2,7 +2,6 @@
 layout: presentation
 title: ATPESC 2024 VisIt Tutorial
 stem: 2024_08_05_ATPESC_VisIt_Intro
-has_image: true
 nbytes:
   - 0
   - 13405268
