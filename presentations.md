@@ -51,11 +51,14 @@ In the table below...
         {% assign nsize = nMsize | append: "MB" %}
     {% endif %}
 
-    <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/bindocs/{{ pres.stem }}{{pres_coll.formats[i]}}?raw=true" title="Click to download {{pres_coll.formats[i]}} file now">{{ nsize }}</a></td>
-    {% endfor %}
+    {% if nksize > 0 %}
+      <td style="text-align: right"><a href="{{ site.rawdata_baseurl }}/bindocs/{{ pres.stem }}{{pres_coll.formats[i]}}?raw=true" title="Click to download {{pres_coll.formats[i]}} file now">{{ nsize }}</a></td>
+    {% else %}
+      <td style="text-align: right">N/A</td>
+    {% endif %}
 
-    </tr>
+  {% endfor %}
+  </tr>
 
 {% endfor %}
-
 </table>
