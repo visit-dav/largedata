@@ -1,7 +1,7 @@
 ---
 layout: datarchive
 title: Potential Flow
-stem: potential flow
+stem: potential_flow
 has_image: true
 nbytes:
   - 62456340
